@@ -1,0 +1,25 @@
+{
+  "dataset": "sklearn load_breast_cancer（威斯康星乳腺癌诊断集）",
+  "n_total": 569,
+  "n_train": 426,
+  "n_test": 143,
+  "n_features": 30,
+  "rule_1feat": {
+    "feature": "mean radius",
+    "threshold": 14.73,
+    "test_acc": 0.8601
+  },
+  "knn_1feat": {
+    "k": 5,
+    "test_acc": 0.8531
+  },
+  "knn_30feat": {
+    "k": 5,
+    "standardized": true,
+    "test_acc": 0.979
+  },
+  "logreg_30feat": {
+    "standardized": true,
+    "test_acc": 0.986
+  }
+}
