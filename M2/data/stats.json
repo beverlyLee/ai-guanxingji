@@ -1,0 +1,62 @@
+{
+  "dataset": "CIFAKE (real vs AI-generated), Kaggle birdy654",
+  "paper": "Bird & Lotfi, IEEE Access 2024, DOI 10.1109/ACCESS.2024.3356122",
+  "full_size": {
+    "train": 100000,
+    "test": 20000,
+    "img": "32x32 RGB"
+  },
+  "subset_used": {
+    "n_train": 12000,
+    "n_test": 3000,
+    "per_class_train": 6000,
+    "per_class_test": 1500,
+    "channels": "grayscale"
+  },
+  "raw_pixel": {
+    "logistic_regression": 0.6493,
+    "manual_mlp": 0.7417,
+    "sklearn_mlp": 0.7213
+  },
+  "human_designed_kernel": {
+    "n_filters": 4,
+    "conv_params": 36,
+    "feature_dim": 900,
+    "logistic_regression": 0.7917
+  },
+  "learned_conv_net": {
+    "n_filters": 8,
+    "conv_params": 72,
+    "fc_equiv_params": 7372800,
+    "weight_sharing_ratio": 102400,
+    "test_acc": 0.8307,
+    "loss_first": 0.6804,
+    "loss_last": 0.3312,
+    "grad_F_first": 0.0742,
+    "grad_F_last": 0.4555
+  },
+  "manual_mlp_detail": {
+    "arch": "1024->128->2",
+    "lr": 0.05,
+    "epochs": 200,
+    "batch_size": 256,
+    "loss_first": 0.7169,
+    "loss_last": 0.336,
+    "grad_W1_first": 0.8898,
+    "grad_W1_last": 2.0077
+  },
+  "overfit_demo": {
+    "n_small": 400,
+    "hidden": 256,
+    "epochs": 400,
+    "n_param": 262656,
+    "no_def_train": 0.9575,
+    "no_def_test": 0.6503,
+    "earlystop_epoch": 339,
+    "earlystop_test": 0.6627,
+    "l2_train": 0.98,
+    "l2_test": 0.6603,
+    "dropout_train": 0.965,
+    "dropout_test": 0.6583
+  }
+}

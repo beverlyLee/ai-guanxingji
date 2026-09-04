@@ -25,6 +25,7 @@
 | 篇 | 主题 | 算法/知识点 | 公开数据集 |
 |----|------|------------|-----------|
 | [M1](M1) | 天天听 AI、机器学习、深度学习，到底谁包着谁？ | AI/ML/DL 包含关系；人写规则 vs 从数据学 | 威斯康星乳腺癌诊断集（[UCI](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic)，sklearn 内置零下载） |
+| [M2](M2) | 9月1日 AI 图要标了，机器怎么一眼认出哪张是 AI 画的？ | 线性模型为何不够；ReLU；反向传播=链式法则；权值共享(CNN)；过拟合三道防线 | CIFAKE 真实 vs AI 生成图（[Kaggle birdy654](https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images)，32×32 RGB） |
 
 ## 复现方式
 
