@@ -24,7 +24,7 @@
 
 | 篇 | 主题 | 算法/知识点 | 公开数据集 |
 |----|------|------------|-----------|
-| [M1](M1) | 天天听 AI、机器学习、深度学习，到底谁包着谁？ | AI/ML/DL 包含关系；人写规则 vs 从数据学 | 威斯康星乳腺癌诊断集（sklearn 内置，零下载） |
+| [M1](M1) | 天天听 AI、机器学习、深度学习，到底谁包着谁？ | AI/ML/DL 包含关系；人写规则 vs 从数据学 | 威斯康星乳腺癌诊断集（[UCI](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic)，sklearn 内置零下载） |
 
 ## 复现方式
 
