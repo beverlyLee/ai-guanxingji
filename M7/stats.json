@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "name": "UCI Default of Credit Card Clients",
+    "n_total": 30000,
+    "n_features": 23,
+    "n_positive": 6636,
+    "n_negative": 23364,
+    "positive_rate": 0.2212,
+    "source": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
+  },
+  "split": {
+    "test_size": 0.3,
+    "random_state": 42,
+    "stratify": true,
+    "n_train": 21000,
+    "n_test": 9000,
+    "positive_rate_train": 0.2212,
+    "positive_rate_test": 0.2212
+  },
+  "metrics_default_threshold": {
+    "threshold": 0.5,
+    "confusion_matrix": {
+      "TN": 6805,
+      "FP": 204,
+      "FN": 1521,
+      "TP": 470
+    },
+    "accuracy": 0.8083,
+    "precision": 0.6973,
+    "recall": 0.2361,
+    "f1": 0.3527,
+    "auc": 0.715,
+    "majority_baseline_accuracy": 0.7788
+  },
+  "cross_validation": {
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42,
+    "scoring": "recall",
+    "fold_scores": [
+      0.2425,
+      0.2306,
+      0.2411,
+      0.2419,
+      0.2442
+    ],
+    "recall_mean": 0.2401,
+    "recall_std": 0.0048,
+    "accuracy_mean": 0.811,
+    "accuracy_std": 0.0021
+  },
+  "threshold_sweep": {
+    "default_threshold": 0.5,
+    "low_threshold": 0.3,
+    "default": {
+      "precision": 0.6973,
+      "recall": 0.2361,
+      "TP": 470,
+      "FN": 1521,
+      "FP": 204
+    },
+    "low": {
+      "precision": 0.5647,
+      "recall": 0.4581,
+      "TP": 912,
+      "FN": 1079,
+      "FP": 703
+    }
+  },
+  "roc": {
+    "auc": 0.715,
+    "n_points": 2586
+  }
+}

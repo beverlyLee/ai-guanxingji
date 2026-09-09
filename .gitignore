@@ -1,5 +1,1 @@
-# 大型原始数据集不入库（按需从公开源下载）
-**/data/*.zip
-**/data/*.npz
-**/data/*.gz
-**/data/*.tar
+.DS_Store
