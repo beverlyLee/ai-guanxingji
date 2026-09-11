@@ -26,6 +26,13 @@
 |----|------|------------|-----------|
 | [M1](M1) | 天天听 AI、机器学习、深度学习，到底谁包着谁？ | AI/ML/DL 包含关系；人写规则 vs 从数据学 | 威斯康星乳腺癌诊断集（[UCI](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic)，sklearn 内置零下载） |
 | [M2](M2) | 9月1日 AI 图要标了，机器怎么一眼认出哪张是 AI 画的？ | 线性模型为何不够；ReLU；反向传播=链式法则；权值共享(CNN)；过拟合三道防线 | CIFAKE 真实 vs AI 生成图（[Kaggle birdy654](https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images)，32×32 RGB） |
+| [M3](M3) | 卷积神经网络：机器是怎么认出一张图的 | 卷积 / 池化 / 反向传播 / 权值共享 | HAM10000 皮肤镜图像 |
+| [M4](M4) | 从词向量到 RNN：AI 是怎么读懂一条评论的 | 词向量 / 序列建模 / RNN / 反向传播 | 电商评论语料（约 6 万条） |
+| [M5](M5) | 用 Keras 训练自己的数据集 | Keras 建模 / 数据加载预处理 / 训练旋钮（学习率·初始化·正则·过拟合治理） | Fashion-MNIST |
+| [M6](M6) | 线性回归与逻辑回归 | 最小二乘 / 梯度下降 / 逻辑回归手写 | UCI 红酒质量 / 银行营销 / 德国信用 |
+| [M7](M7) | 模型评估：怎么判断一个模型靠不靠谱 | 混淆矩阵 / ROC / 交叉验证 / 评估指标 | UCI 信用卡违约 |
+| [M8](M8) | 逻辑回归多分类与决策边界 | softmax / 交叉熵 / 梯度校验 / 线性与弯边界 | 鸢尾花 |
+| [M9](M9) | 无监督聚类：参数分了档，价格却不认 | KMeans（肘部法·轮廓系数）/ Gap 统计量 / DBSCAN | GSMArena 手机规格（3104 款） |
 
 ## 复现方式
 

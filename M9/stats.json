@@ -1,0 +1,916 @@
+{
+  "logged_features": [
+    "price_eur",
+    "weight_g",
+    "storage_gb",
+    "ram_gb",
+    "camera_mp"
+  ],
+  "skew_raw": {
+    "price_eur": 3.137,
+    "storage_gb": 2.508,
+    "weight_g": 1.896,
+    "camera_mp": 1.792,
+    "ram_gb": 1.0,
+    "battery_mah": 0.757,
+    "ppi": 0.312,
+    "screen_in": -0.457
+  },
+  "skew_after_log": {
+    "price_eur": 0.266,
+    "screen_in": -0.457,
+    "weight_g": 0.678,
+    "battery_mah": 0.757,
+    "ppi": 0.312,
+    "storage_gb": -0.226,
+    "ram_gb": -0.087,
+    "camera_mp": 0.322
+  },
+  "gap_statistic": {
+    "uniform_box": {
+      "table": {
+        "1": {
+          "logW": 8.6384,
+          "ref_mean": 9.4165,
+          "gap": 0.7781,
+          "sd": 0.002
+        },
+        "2": {
+          "logW": 8.3602,
+          "ref_mean": 9.3233,
+          "gap": 0.9631,
+          "sd": 0.0027
+        },
+        "3": {
+          "logW": 8.2371,
+          "ref_mean": 9.27,
+          "gap": 1.0328,
+          "sd": 0.0033
+        },
+        "4": {
+          "logW": 8.1249,
+          "ref_mean": 9.2311,
+          "gap": 1.1061,
+          "sd": 0.0031
+        },
+        "5": {
+          "logW": 8.0781,
+          "ref_mean": 9.2036,
+          "gap": 1.1254,
+          "sd": 0.0027
+        },
+        "6": {
+          "logW": 8.0286,
+          "ref_mean": 9.1795,
+          "gap": 1.1508,
+          "sd": 0.0029
+        },
+        "7": {
+          "logW": 8.0009,
+          "ref_mean": 9.1596,
+          "gap": 1.1587,
+          "sd": 0.0027
+        },
+        "8": {
+          "logW": 7.9764,
+          "ref_mean": 9.1405,
+          "gap": 1.1641,
+          "sd": 0.0041
+        }
+      },
+      "k_selected": null
+    },
+    "uniform_pca": {
+      "table": {
+        "1": {
+          "logW": 8.6384,
+          "ref_mean": 9.3792,
+          "gap": 0.7409,
+          "sd": 0.0035
+        },
+        "2": {
+          "logW": 8.3602,
+          "ref_mean": 9.1664,
+          "gap": 0.8062,
+          "sd": 0.0036
+        },
+        "3": {
+          "logW": 8.2371,
+          "ref_mean": 9.1001,
+          "gap": 0.863,
+          "sd": 0.0043
+        },
+        "4": {
+          "logW": 8.1249,
+          "ref_mean": 9.0423,
+          "gap": 0.9174,
+          "sd": 0.0033
+        },
+        "5": {
+          "logW": 8.0781,
+          "ref_mean": 9.0001,
+          "gap": 0.922,
+          "sd": 0.003
+        },
+        "6": {
+          "logW": 8.0286,
+          "ref_mean": 8.9681,
+          "gap": 0.9395,
+          "sd": 0.0029
+        },
+        "7": {
+          "logW": 8.0009,
+          "ref_mean": 8.9491,
+          "gap": 0.9482,
+          "sd": 0.0028
+        },
+        "8": {
+          "logW": 7.9764,
+          "ref_mean": 8.9312,
+          "gap": 0.9549,
+          "sd": 0.0034
+        }
+      },
+      "k_selected": null
+    },
+    "gaussian": {
+      "table": {
+        "1": {
+          "logW": 8.6384,
+          "ref_mean": 8.6458,
+          "gap": 0.0074,
+          "sd": 0.0065
+        },
+        "2": {
+          "logW": 8.3602,
+          "ref_mean": 8.4123,
+          "gap": 0.0522,
+          "sd": 0.0087
+        },
+        "3": {
+          "logW": 8.2371,
+          "ref_mean": 8.3207,
+          "gap": 0.0835,
+          "sd": 0.0079
+        },
+        "4": {
+          "logW": 8.1249,
+          "ref_mean": 8.2541,
+          "gap": 0.1292,
+          "sd": 0.0052
+        },
+        "5": {
+          "logW": 8.0781,
+          "ref_mean": 8.2079,
+          "gap": 0.1298,
+          "sd": 0.0041
+        },
+        "6": {
+          "logW": 8.0286,
+          "ref_mean": 8.1679,
+          "gap": 0.1393,
+          "sd": 0.0049
+        },
+        "7": {
+          "logW": 8.0009,
+          "ref_mean": 8.1407,
+          "gap": 0.1398,
+          "sd": 0.0056
+        },
+        "8": {
+          "logW": 7.9764,
+          "ref_mean": 8.1188,
+          "gap": 0.1424,
+          "sd": 0.0055
+        }
+      },
+      "k_selected": 4
+    }
+  },
+  "pca_explained_variance_ratio": [
+    0.6352,
+    0.1722,
+    0.0624,
+    0.0422,
+    0.0339,
+    0.0272,
+    0.0177,
+    0.0093
+  ],
+  "pca_n_components_for_90pct": 4,
+  "pca_loadings_pc1": {
+    "价格(欧元)": 0.325,
+    "屏幕(英寸)": 0.369,
+    "重量(克)": 0.31,
+    "电池(mAh)": 0.337,
+    "像素密度(ppi)": 0.265,
+    "存储(GB)": 0.412,
+    "内存(GB)": 0.413,
+    "主摄(MP)": 0.371
+  },
+  "pca_loadings_pc2": {
+    "价格(欧元)": 0.398,
+    "屏幕(英寸)": -0.304,
+    "重量(克)": -0.465,
+    "电池(mAh)": -0.427,
+    "像素密度(ppi)": 0.563,
+    "存储(GB)": 0.109,
+    "内存(GB)": 0.134,
+    "主摄(MP)": 0.059
+  },
+  "kmeans": {
+    "k_grid": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "inertia": [
+      14023.2,
+      11191.2,
+      8895.2,
+      8131.4,
+      7393.9,
+      6792.8,
+      6329.2,
+      5865.1,
+      5562.7
+    ],
+    "silhouette": [
+      0.3698,
+      0.2909,
+      0.3375,
+      0.2824,
+      0.2461,
+      0.2499,
+      0.2594,
+      0.2556,
+      0.2454
+    ],
+    "k_by_elbow": 4,
+    "k_by_silhouette": 2,
+    "silhouette_max": 0.3698,
+    "indicators_agree": false,
+    "k_main": 4
+  },
+  "profile_k2": {
+    "sizes": {
+      "1": 1413,
+      "0": 1691
+    },
+    "price_means": [
+      169.0,
+      378.1
+    ],
+    "price_medians": [
+      150.0,
+      300.0
+    ],
+    "battery": [
+      3064.0,
+      4528.0
+    ],
+    "ram": [
+      2.5,
+      7.61
+    ],
+    "storage": [
+      34.0,
+      205.0
+    ],
+    "screen": [
+      5.44,
+      6.47
+    ],
+    "weight": [
+      160.0,
+      197.0
+    ],
+    "camera": [
+      11.4,
+      41.8
+    ],
+    "ppi": [
+      310.0,
+      388.0
+    ],
+    "oled_share": [
+      0.1,
+      0.49
+    ],
+    "g5_share": [
+      0.0,
+      0.42
+    ]
+  },
+  "profile_k3": {
+    "sizes": {
+      "2": 731,
+      "0": 1215,
+      "1": 1158
+    },
+    "price_means": [
+      135.7,
+      231.4,
+      430.0
+    ],
+    "price_medians": [
+      130.0,
+      200.0,
+      338.0
+    ],
+    "battery": [
+      2557.0,
+      3867.0,
+      4679.0
+    ],
+    "ram": [
+      1.74,
+      4.1,
+      8.76
+    ],
+    "storage": [
+      18.0,
+      76.0,
+      250.0
+    ],
+    "screen": [
+      5.1,
+      6.0,
+      6.57
+    ],
+    "weight": [
+      148.0,
+      180.0,
+      201.0
+    ],
+    "camera": [
+      9.4,
+      15.1,
+      53.1
+    ],
+    "ppi": [
+      275.0,
+      355.0,
+      399.0
+    ],
+    "oled_share": [
+      0.07,
+      0.19,
+      0.61
+    ],
+    "g5_share": [
+      0.0,
+      0.04,
+      0.58
+    ]
+  },
+  "profile_k4": {
+    "sizes": {
+      "3": 751,
+      "2": 612,
+      "1": 703,
+      "0": 1038
+    },
+    "price_means": [
+      133.5,
+      156.2,
+      314.5,
+      444.3
+    ],
+    "price_medians": [
+      130.0,
+      146.0,
+      280.0,
+      350.0
+    ],
+    "battery": [
+      2611.0,
+      4726.0,
+      3331.0,
+      4615.0
+    ],
+    "ram": [
+      1.83,
+      4.03,
+      4.41,
+      9.11
+    ],
+    "storage": [
+      20.0,
+      77.0,
+      87.0,
+      261.0
+    ],
+    "screen": [
+      5.13,
+      6.42,
+      5.7,
+      6.59
+    ],
+    "weight": [
+      149.0,
+      203.0,
+      167.0,
+      199.0
+    ],
+    "camera": [
+      9.6,
+      19.3,
+      14.8,
+      55.2
+    ],
+    "ppi": [
+      270.0,
+      275.0,
+      429.0,
+      407.0
+    ],
+    "oled_share": [
+      0.06,
+      0.03,
+      0.34,
+      0.65
+    ],
+    "g5_share": [
+      0.0,
+      0.07,
+      0.04,
+      0.63
+    ]
+  },
+  "price_quantiles_k_main": {
+    "3": {
+      "p05": 50.0,
+      "p25": 90.0,
+      "p50": 130.0,
+      "p75": 170.0,
+      "p95": 240.0
+    },
+    "2": {
+      "p05": 80.0,
+      "p25": 110.0,
+      "p50": 146.1004,
+      "p75": 189.96249999999998,
+      "p95": 284.4999999999993
+    },
+    "1": {
+      "p05": 160.0,
+      "p25": 209.0,
+      "p50": 280.0,
+      "p75": 380.0,
+      "p95": 588.9999999999998
+    },
+    "0": {
+      "p05": 170.0,
+      "p25": 250.0,
+      "p50": 350.0,
+      "p75": 520.0,
+      "p95": 1095.4299999999998
+    }
+  },
+  "price_band_overlap_width": [
+    160.0,
+    124.5,
+    419.0
+  ],
+  "dbscan_space_sweep": [
+    {
+      "空间": "8维标准化",
+      "维度": 8,
+      "min_samples": 16,
+      "eps_knee": 1.289,
+      "拐点分位": "90%",
+      "簇数": 1,
+      "噪声数": 159,
+      "噪声占比": "5.1%",
+      "轮廓系数": null,
+      "异类富集倍数": 9.61,
+      "p值": "1.7e-51"
+    },
+    {
+      "空间": "前3主成分",
+      "维度": 3,
+      "min_samples": 6,
+      "eps_knee": 0.5,
+      "拐点分位": "90%",
+      "簇数": 4,
+      "噪声数": 183,
+      "噪声占比": "5.9%",
+      "轮廓系数": -0.1452,
+      "异类富集倍数": 7.95,
+      "p值": "6.2e-43"
+    },
+    {
+      "空间": "前3主成分(白化)",
+      "维度": 3,
+      "min_samples": 6,
+      "eps_knee": 0.416,
+      "拐点分位": "91%",
+      "簇数": 4,
+      "噪声数": 167,
+      "噪声占比": "5.4%",
+      "轮廓系数": 0.0379,
+      "异类富集倍数": 8.28,
+      "p值": "1.2e-41"
+    },
+    {
+      "空间": "前2主成分(白化)",
+      "维度": 2,
+      "min_samples": 4,
+      "eps_knee": 0.14,
+      "拐点分位": "93%",
+      "簇数": 7,
+      "噪声数": 166,
+      "噪声占比": "5.3%",
+      "轮廓系数": -0.2879,
+      "异类富集倍数": 6.72,
+      "p值": "2.5e-28"
+    }
+  ],
+  "dbscan_eps_grid_main_space": {
+    "space": "前3主成分(白化)",
+    "grid": [
+      {
+        "eps": 0.3,
+        "n_clusters": 5,
+        "n_noise": 423,
+        "noise_pct": 13.63,
+        "silhouette": -0.2279
+      },
+      {
+        "eps": 0.4,
+        "n_clusters": 5,
+        "n_noise": 188,
+        "noise_pct": 6.06,
+        "silhouette": 0.062
+      },
+      {
+        "eps": 0.5,
+        "n_clusters": 1,
+        "n_noise": 117,
+        "noise_pct": 3.77,
+        "silhouette": null
+      },
+      {
+        "eps": 0.6,
+        "n_clusters": 4,
+        "n_noise": 58,
+        "noise_pct": 1.87,
+        "silhouette": 0.4192
+      },
+      {
+        "eps": 0.7,
+        "n_clusters": 5,
+        "n_noise": 28,
+        "noise_pct": 0.9,
+        "silhouette": 0.4134
+      },
+      {
+        "eps": 0.8,
+        "n_clusters": 4,
+        "n_noise": 13,
+        "noise_pct": 0.42,
+        "silhouette": 0.4185
+      },
+      {
+        "eps": 0.9,
+        "n_clusters": 1,
+        "n_noise": 7,
+        "noise_pct": 0.23,
+        "silhouette": null
+      },
+      {
+        "eps": 1.0,
+        "n_clusters": 1,
+        "n_noise": 4,
+        "noise_pct": 0.13,
+        "silhouette": null
+      },
+      {
+        "eps": 1.1,
+        "n_clusters": 1,
+        "n_noise": 2,
+        "noise_pct": 0.06,
+        "silhouette": null
+      },
+      {
+        "eps": 1.2,
+        "n_clusters": 1,
+        "n_noise": 2,
+        "noise_pct": 0.06,
+        "silhouette": null
+      },
+      {
+        "eps": 1.3,
+        "n_clusters": 1,
+        "n_noise": 2,
+        "noise_pct": 0.06,
+        "silhouette": null
+      },
+      {
+        "eps": 1.4,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 1.5,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 1.6,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 1.7,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 1.8,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 1.9,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.0,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.1,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.2,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.3,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.4,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.5,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.6,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.7,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.8,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 2.9,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      },
+      {
+        "eps": 3.0,
+        "n_clusters": 1,
+        "n_noise": 0,
+        "noise_pct": 0.0,
+        "silhouette": null
+      }
+    ]
+  },
+  "dbscan": {
+    "space": "前3主成分(白化)",
+    "min_samples": 6,
+    "eps": 0.416,
+    "n_clusters": 4,
+    "n_noise": 167,
+    "noise_pct": 5.38,
+    "silhouette_non_noise": 0.0379,
+    "enrichment": {
+      "observed": 57,
+      "expected": 6.9,
+      "enrichment": 8.28,
+      "p_value": 1.2125906482933044e-41,
+      "noise_n": 167
+    },
+    "knee_percentile": 90.6
+  },
+  "dbscan_8d_control": {
+    "eps": 0.416,
+    "min_samples": 6,
+    "n_clusters": 42,
+    "n_noise": 2186,
+    "noise_pct": 70.43,
+    "silhouette_non_noise": 0.2978
+  },
+  "noise_composition": {
+    "fold_total": 27,
+    "fold_in_noise": 13,
+    "rugged_total": 101,
+    "rugged_in_noise": 44,
+    "odd_total": 128,
+    "odd_in_noise": 57
+  },
+  "noise_top_price": [
+    {
+      "model": "Huawei Mate X2",
+      "price_eur": 2300.0,
+      "screen_in": 8.0,
+      "weight_g": 295.0,
+      "battery_mah": 4500.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Huawei Mate X2 4G",
+      "price_eur": 2290.0,
+      "screen_in": 8.0,
+      "weight_g": 295.0,
+      "battery_mah": 4500.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Huawei Mate X",
+      "price_eur": 2150.0,
+      "screen_in": 8.0,
+      "weight_g": 295.0,
+      "battery_mah": 4500.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Huawei Mate Xs",
+      "price_eur": 1950.0,
+      "screen_in": 8.0,
+      "weight_g": 300.0,
+      "battery_mah": 4500.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Sony Xperia Pro",
+      "price_eur": 1838.16,
+      "screen_in": 6.5,
+      "weight_g": 225.1,
+      "battery_mah": 4000.0,
+      "is_fold": 0
+    },
+    {
+      "model": "Samsung Galaxy Fold",
+      "price_eur": 1750.0,
+      "screen_in": 7.3,
+      "weight_g": 276.0,
+      "battery_mah": 4380.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Microsoft Surface Duo 2",
+      "price_eur": 1499.0,
+      "screen_in": 8.3,
+      "weight_g": 284.0,
+      "battery_mah": 4449.0,
+      "is_fold": 1
+    },
+    {
+      "model": "vivo X Fold+",
+      "price_eur": 1450.0,
+      "screen_in": 8.03,
+      "weight_g": 311.0,
+      "battery_mah": 4730.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Samsung Galaxy Fold 5G",
+      "price_eur": 1400.0,
+      "screen_in": 7.3,
+      "weight_g": 276.0,
+      "battery_mah": 4235.0,
+      "is_fold": 1
+    },
+    {
+      "model": "Honor Magic V",
+      "price_eur": 1400.0,
+      "screen_in": 7.9,
+      "weight_g": 288.0,
+      "battery_mah": 4750.0,
+      "is_fold": 0
+    },
+    {
+      "model": "Apple iPhone 13 Pro Max",
+      "price_eur": 1379.0,
+      "screen_in": 6.7,
+      "weight_g": 240.0,
+      "battery_mah": 4352.0,
+      "is_fold": 0
+    },
+    {
+      "model": "Xiaomi Mi Mix Fold",
+      "price_eur": 1300.0,
+      "screen_in": 8.01,
+      "weight_g": 317.0,
+      "battery_mah": 5020.0,
+      "is_fold": 1
+    }
+  ],
+  "fold_km_distribution": {
+    "0": 24,
+    "3": 2,
+    "1": 1
+  },
+  "fold_db_distribution": {
+    "-1": 13,
+    "0": 13,
+    "1": 1
+  },
+  "robustness": {
+    "log+标准化（本文采用）": {
+      "silhouette": {
+        "2": 0.3698,
+        "3": 0.2909,
+        "4": 0.3375,
+        "5": 0.2824
+      },
+      "gap_k2_minus_k1": 0.066
+    },
+    "仅标准化（不取对数）": {
+      "silhouette": {
+        "2": 0.3537,
+        "3": 0.2857,
+        "4": 0.3017,
+        "5": 0.3321
+      },
+      "gap_k2_minus_k1": 0.129
+    },
+    "只用 4 个特征（价格/屏幕/电池/内存）": {
+      "silhouette": {
+        "2": 0.4258,
+        "3": 0.3273,
+        "4": 0.3299,
+        "5": 0.2989
+      },
+      "gap_k2_minus_k1": 0.034
+    },
+    "只用 4 个特征且不取对数": {
+      "silhouette": {
+        "2": 0.4152,
+        "3": 0.4083,
+        "4": 0.3882,
+        "5": 0.3137
+      },
+      "gap_k2_minus_k1": 0.159
+    }
+  }
+}
