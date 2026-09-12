@@ -1,0 +1,255 @@
+{
+  "dataset": "Ames housing (Kaggle train.csv, OpenML house_prices v1)",
+  "n_rows": 1460,
+  "n_features": 45,
+  "median_price": 163000.0,
+  "mean_price": 180921.0,
+  "min_price": 34900,
+  "max_price": 755000,
+  "above_median": 728,
+  "below_median": 732,
+  "scratch_tree_depth3": {
+    "root_feature": "OverallQual",
+    "root_thr": 6.5,
+    "root_gain": 0.3393,
+    "root_gr": 0.3554,
+    "parent_entropy": 1.0
+  },
+  "gain_ratio_table": [
+    {
+      "feature": "OverallQual",
+      "info_gain": 0.3393,
+      "gain_ratio": 0.3554,
+      "thr": 6.5,
+      "n_unique": 10
+    },
+    {
+      "feature": "FullBath",
+      "info_gain": 0.3128,
+      "gain_ratio": 0.3149,
+      "thr": 1.5,
+      "n_unique": 4
+    },
+    {
+      "feature": "YearBuilt",
+      "info_gain": 0.3117,
+      "gain_ratio": 0.3188,
+      "thr": 1980.0,
+      "n_unique": 112
+    },
+    {
+      "feature": "ExterQual",
+      "info_gain": 0.3027,
+      "gain_ratio": 0.3184,
+      "thr": 3.5,
+      "n_unique": 4
+    },
+    {
+      "feature": "GrLivArea",
+      "info_gain": 0.2883,
+      "gain_ratio": 0.3183,
+      "thr": 1224.0,
+      "n_unique": 861
+    },
+    {
+      "feature": "BsmtQual",
+      "info_gain": 0.2879,
+      "gain_ratio": 0.2879,
+      "thr": 3.5,
+      "n_unique": 5
+    },
+    {
+      "feature": "KitchenQual",
+      "info_gain": 0.2711,
+      "gain_ratio": 0.2718,
+      "thr": 3.5,
+      "n_unique": 4
+    },
+    {
+      "feature": "GarageCars",
+      "info_gain": 0.2608,
+      "gain_ratio": 0.2926,
+      "thr": 1.5,
+      "n_unique": 5
+    },
+    {
+      "feature": "GarageYrBlt",
+      "info_gain": 0.2453,
+      "gain_ratio": 0.2504,
+      "thr": 1988.0,
+      "n_unique": 97
+    },
+    {
+      "feature": "YearRemodAdd",
+      "info_gain": 0.2015,
+      "gain_ratio": 0.2053,
+      "thr": 1983.0,
+      "n_unique": 61
+    },
+    {
+      "feature": "TotalBsmtSF",
+      "info_gain": 0.1806,
+      "gain_ratio": 0.2006,
+      "thr": 1196.0,
+      "n_unique": 721
+    },
+    {
+      "feature": "FireplaceQu",
+      "info_gain": 0.1781,
+      "gain_ratio": 0.1781,
+      "thr": 2.5,
+      "n_unique": 6
+    }
+  ],
+  "clf_entropy": {
+    "train_acc": 0.892,
+    "test_acc": 0.871,
+    "root_feature": "YearBuilt",
+    "root_thr": 1984.5,
+    "root_e_left": 0.7915,
+    "root_e_right": 0.487,
+    "top_importances": [
+      [
+        "YearBuilt",
+        0.477
+      ],
+      [
+        "GrLivArea",
+        0.301
+      ],
+      [
+        "LotArea",
+        0.127
+      ],
+      [
+        "OpenPorchSF",
+        0.035
+      ],
+      [
+        "BsmtFinSF1",
+        0.031
+      ],
+      [
+        "MasVnrArea",
+        0.011
+      ]
+    ]
+  },
+  "clf_gini": {
+    "train_acc": 0.911,
+    "test_acc": 0.868
+  },
+  "reg_deep": {
+    "train_r2": 1.0,
+    "test_r2": 0.742,
+    "leaves": 1056,
+    "root_feature": "OverallQual",
+    "root_thr": 7.5,
+    "top_importances": [
+      [
+        "OverallQual",
+        0.634
+      ],
+      [
+        "GrLivArea",
+        0.109
+      ],
+      [
+        "TotalBsmtSF",
+        0.05
+      ],
+      [
+        "GarageYrBlt",
+        0.04
+      ],
+      [
+        "BsmtFinSF1",
+        0.04
+      ],
+      [
+        "LotArea",
+        0.031
+      ],
+      [
+        "YearBuilt",
+        0.019
+      ],
+      [
+        "FullBath",
+        0.011
+      ]
+    ]
+  },
+  "reg_shallow_d3": {
+    "train_r2": 0.724,
+    "test_r2": 0.7314
+  },
+  "pre_prune": {
+    "depth": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "train_r2": [
+      0.4543,
+      0.6217,
+      0.724,
+      0.8025,
+      0.8598,
+      0.9078,
+      0.9373,
+      0.9607,
+      0.9762,
+      0.9861,
+      0.9911,
+      0.994,
+      0.9962,
+      0.9978,
+      0.9988
+    ],
+    "test_r2": [
+      0.4527,
+      0.6613,
+      0.7314,
+      0.7902,
+      0.733,
+      0.7597,
+      0.6856,
+      0.626,
+      0.7216,
+      0.7242,
+      0.7797,
+      0.744,
+      0.627,
+      0.7232,
+      0.7424
+    ]
+  },
+  "pre_prune_best_depth": 3,
+  "post_prune": {
+    "alpha": 1345545.11850402,
+    "test_r2": 0.7548,
+    "train_r2": 0.975,
+    "leaves": 165
+  },
+  "boundary": {
+    "feats": [
+      "GrLivArea",
+      "YearBuilt"
+    ],
+    "depth": 6,
+    "test_r2": 0.7716
+  }
+}
