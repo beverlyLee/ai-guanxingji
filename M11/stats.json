@@ -1,0 +1,306 @@
+{
+  "dataset": "UCI Cleveland (OpenML cleveland v1)",
+  "n_samples": 303,
+  "n_features": 13,
+  "n_missing": 6,
+  "missing_per_col": {
+    "age": 0,
+    "sex": 0,
+    "cp": 0,
+    "trestbps": 0,
+    "chol": 0,
+    "fbs": 0,
+    "restecg": 0,
+    "thalach": 0,
+    "exang": 0,
+    "oldpeak": 0,
+    "slope": 0,
+    "ca": 4,
+    "thal": 2
+  },
+  "pos_rate": 0.459,
+  "feature_names": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "depth_sweep": {
+    "depth": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      "None"
+    ],
+    "train_acc": [
+      0.762,
+      0.772,
+      0.855,
+      0.871,
+      0.914,
+      0.947,
+      0.987,
+      0.99,
+      1.0,
+      1.0
+    ],
+    "cv_acc": [
+      0.729,
+      0.719,
+      0.779,
+      0.772,
+      0.769,
+      0.779,
+      0.769,
+      0.765,
+      0.765,
+      0.765
+    ],
+    "cv_std": [
+      0.045,
+      0.062,
+      0.068,
+      0.071,
+      0.06,
+      0.037,
+      0.052,
+      0.047,
+      0.047,
+      0.047
+    ]
+  },
+  "deep_tree": {
+    "train_acc": 1.0,
+    "cv_mean": 0.765,
+    "cv_std": 0.047
+  },
+  "shallow_tree": {
+    "cv_mean": 0.772,
+    "cv_std": 0.071
+  },
+  "bagging": {
+    "cv_mean": 0.812,
+    "cv_std": 0.036
+  },
+  "random_forest": {
+    "oob_score": 0.832,
+    "cv_mean": 0.822,
+    "cv_std": 0.034,
+    "n_estimators": 300,
+    "feature_importances": {
+      "cp": 0.12736236587829924,
+      "ca": 0.12426069630012437,
+      "thalach": 0.1203366403403183,
+      "thal": 0.11555435715021067,
+      "oldpeak": 0.10514524588757349,
+      "age": 0.0864850402240142,
+      "chol": 0.08421229463433616,
+      "trestbps": 0.07170015324068711,
+      "exang": 0.05748331127135406,
+      "slope": 0.044688249122760315,
+      "sex": 0.03278395150216218,
+      "restecg": 0.01954352761645891,
+      "fbs": 0.010444166831701072
+    },
+    "top5": [
+      [
+        "cp",
+        0.12736236587829924
+      ],
+      [
+        "ca",
+        0.12426069630012437
+      ],
+      [
+        "thalach",
+        0.1203366403403183
+      ],
+      [
+        "thal",
+        0.11555435715021067
+      ],
+      [
+        "oldpeak",
+        0.10514524588757349
+      ]
+    ]
+  },
+  "permutation_importance": {
+    "ca": 0.07937293729372936,
+    "cp": 0.0636963696369637,
+    "thal": 0.048514851485148516,
+    "chol": 0.02392739273927393,
+    "age": 0.023597359735973582,
+    "oldpeak": 0.02145214521452145,
+    "thalach": 0.019636963696369646,
+    "exang": 0.017656765676567654,
+    "sex": 0.012706270627062704,
+    "trestbps": 0.009900990099009905,
+    "slope": 0.0077557755775577554,
+    "restecg": 0.006930693069306932,
+    "fbs": 0.0
+  },
+  "rf_oob_curve": [
+    [
+      10,
+      0.2079
+    ],
+    [
+      20,
+      0.1881
+    ],
+    [
+      30,
+      0.1749
+    ],
+    [
+      50,
+      0.1782
+    ],
+    [
+      75,
+      0.1815
+    ],
+    [
+      100,
+      0.1749
+    ],
+    [
+      150,
+      0.1815
+    ],
+    [
+      200,
+      0.1749
+    ],
+    [
+      300,
+      0.1683
+    ],
+    [
+      400,
+      0.1716
+    ]
+  ],
+  "adaboost": {
+    "cv_mean": 0.828,
+    "cv_std": 0.034
+  },
+  "gradient_boosting": {
+    "cv_mean": 0.795,
+    "cv_std": 0.053
+  },
+  "stacking": {
+    "cv_mean": 0.818,
+    "cv_std": 0.06
+  },
+  "model_comparison": [
+    {
+      "model": "单棵浅树(max_depth=4)",
+      "mean": 0.772,
+      "std": 0.071,
+      "mean_pp": 77.2,
+      "std_pp": 7.1
+    },
+    {
+      "model": "单棵深树(不剪枝)",
+      "mean": 0.765,
+      "std": 0.047,
+      "mean_pp": 76.5,
+      "std_pp": 4.7
+    },
+    {
+      "model": "Bagging(深树)",
+      "mean": 0.812,
+      "std": 0.036,
+      "mean_pp": 81.2,
+      "std_pp": 3.6
+    },
+    {
+      "model": "随机森林",
+      "mean": 0.822,
+      "std": 0.034,
+      "mean_pp": 82.2,
+      "std_pp": 3.4
+    },
+    {
+      "model": "AdaBoost",
+      "mean": 0.828,
+      "std": 0.034,
+      "mean_pp": 82.8,
+      "std_pp": 3.4
+    },
+    {
+      "model": "GradientBoosting",
+      "mean": 0.795,
+      "std": 0.053,
+      "mean_pp": 79.5,
+      "std_pp": 5.3
+    },
+    {
+      "model": "Stacking",
+      "mean": 0.818,
+      "std": 0.06,
+      "mean_pp": 81.8,
+      "std_pp": 6.0
+    }
+  ],
+  "model_comparison_pp": [
+    {
+      "model": "单棵浅树(max_depth=4)",
+      "mean_pp": 77.2,
+      "std_pp": 7.1
+    },
+    {
+      "model": "单棵深树(不剪枝)",
+      "mean_pp": 76.5,
+      "std_pp": 4.7
+    },
+    {
+      "model": "Bagging(深树)",
+      "mean_pp": 81.2,
+      "std_pp": 3.6
+    },
+    {
+      "model": "随机森林",
+      "mean_pp": 82.2,
+      "std_pp": 3.4
+    },
+    {
+      "model": "AdaBoost",
+      "mean_pp": 82.8,
+      "std_pp": 3.4
+    },
+    {
+      "model": "GradientBoosting",
+      "mean_pp": 79.5,
+      "std_pp": 5.3
+    },
+    {
+      "model": "Stacking",
+      "mean_pp": 81.8,
+      "std_pp": 6.0
+    }
+  ],
+  "overfit_gap_pp": 23.5,
+  "theory": {
+    "bootstrap_in_bag_rate": 0.632,
+    "bootstrap_oob_rate": 0.368
+  },
+  "rng": 42
+}
