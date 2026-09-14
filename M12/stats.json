@@ -1,0 +1,253 @@
+{
+  "dataset": "UCI Spambase (OpenML spambase v1)",
+  "task": "诈骗短信识别(ham=0 / spam=1)",
+  "n_samples": 4601,
+  "n_features": 57,
+  "n_ham": 2788,
+  "n_spam": 1813,
+  "spam_rate": 0.394,
+  "feature_groups": {
+    "word_freq_count": 48,
+    "char_freq_count": 6,
+    "capital_run_length_count": 3,
+    "word_feats_sample": [
+      "word_freq_make",
+      "word_freq_address",
+      "word_freq_all",
+      "word_freq_3d",
+      "word_freq_our",
+      "word_freq_over",
+      "word_freq_remove",
+      "word_freq_internet",
+      "word_freq_order",
+      "word_freq_mail",
+      "word_freq_receive",
+      "word_freq_will"
+    ],
+    "char_feats": [
+      "char_freq_%3B",
+      "char_freq_%28",
+      "char_freq_%5B",
+      "char_freq_%21",
+      "char_freq_%24",
+      "char_freq_%23"
+    ],
+    "cap_feats": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total"
+    ]
+  },
+  "top_spam_words": [
+    {
+      "feature": "capital_run_length_total",
+      "spam_mean": 470.6194,
+      "ham_mean": 161.4709,
+      "gap": 309.1485
+    },
+    {
+      "feature": "capital_run_length_longest",
+      "spam_mean": 104.3933,
+      "ham_mean": 18.2145,
+      "gap": 86.1788
+    },
+    {
+      "feature": "capital_run_length_average",
+      "spam_mean": 9.5192,
+      "ham_mean": 2.3773,
+      "gap": 7.1419
+    },
+    {
+      "feature": "word_freq_you",
+      "spam_mean": 2.2645,
+      "ham_mean": 1.2703,
+      "gap": 0.9942
+    },
+    {
+      "feature": "word_freq_your",
+      "spam_mean": 1.3804,
+      "ham_mean": 0.4387,
+      "gap": 0.9417
+    },
+    {
+      "feature": "word_freq_free",
+      "spam_mean": 0.5184,
+      "ham_mean": 0.0736,
+      "gap": 0.4448
+    },
+    {
+      "feature": "char_freq_%21",
+      "spam_mean": 0.5137,
+      "ham_mean": 0.11,
+      "gap": 0.4037
+    },
+    {
+      "feature": "word_freq_our",
+      "spam_mean": 0.514,
+      "ham_mean": 0.181,
+      "gap": 0.3329
+    },
+    {
+      "feature": "word_freq_remove",
+      "spam_mean": 0.2754,
+      "ham_mean": 0.0094,
+      "gap": 0.266
+    },
+    {
+      "feature": "word_freq_000",
+      "spam_mean": 0.2471,
+      "ham_mean": 0.0071,
+      "gap": 0.24
+    },
+    {
+      "feature": "word_freq_business",
+      "spam_mean": 0.2875,
+      "ham_mean": 0.0483,
+      "gap": 0.2392
+    },
+    {
+      "feature": "word_freq_email",
+      "spam_mean": 0.3192,
+      "ham_mean": 0.0973,
+      "gap": 0.2219
+    }
+  ],
+  "top_ham_words": [
+    {
+      "feature": "word_freq_george",
+      "spam_mean": 0.0015,
+      "ham_mean": 1.2653,
+      "gap": -1.2637
+    },
+    {
+      "feature": "word_freq_hp",
+      "spam_mean": 0.0175,
+      "ham_mean": 0.8955,
+      "gap": -0.878
+    },
+    {
+      "feature": "word_freq_hpl",
+      "spam_mean": 0.0092,
+      "ham_mean": 0.432,
+      "gap": -0.4228
+    },
+    {
+      "feature": "word_freq_re",
+      "spam_mean": 0.1251,
+      "ham_mean": 0.4158,
+      "gap": -0.2907
+    },
+    {
+      "feature": "word_freq_edu",
+      "spam_mean": 0.0147,
+      "ham_mean": 0.2872,
+      "gap": -0.2725
+    },
+    {
+      "feature": "word_freq_meeting",
+      "spam_mean": 0.0024,
+      "ham_mean": 0.2168,
+      "gap": -0.2144
+    }
+  ],
+  "base_linear_svm": {
+    "C": 1.0,
+    "train_acc": 0.9326,
+    "cv_mean": 0.9261,
+    "cv_std": 0.0056,
+    "cv_mean_pp": 92.6,
+    "margin_width": 0.3841,
+    "n_support": 934,
+    "n_support_ratio": 0.203
+  },
+  "c_sweep": [
+    {
+      "C": 0.01,
+      "train_acc": 0.9233,
+      "cv_acc": 0.9189,
+      "n_support": 1326,
+      "n_support_ratio": 0.2882,
+      "margin_width": 1.205
+    },
+    {
+      "C": 0.1,
+      "train_acc": 0.9322,
+      "cv_acc": 0.9257,
+      "n_support": 1039,
+      "n_support_ratio": 0.2258,
+      "margin_width": 0.5982
+    },
+    {
+      "C": 1.0,
+      "train_acc": 0.9326,
+      "cv_acc": 0.9261,
+      "n_support": 934,
+      "n_support_ratio": 0.203,
+      "margin_width": 0.3841
+    },
+    {
+      "C": 10.0,
+      "train_acc": 0.9359,
+      "cv_acc": 0.9265,
+      "n_support": 911,
+      "n_support_ratio": 0.198,
+      "margin_width": 0.1649
+    },
+    {
+      "C": 100.0,
+      "train_acc": 0.9352,
+      "cv_acc": 0.9265,
+      "n_support": 903,
+      "n_support_ratio": 0.1963,
+      "margin_width": 0.0752
+    }
+  ],
+  "kernel_compare": [
+    {
+      "kernel": "linear",
+      "cv_mean": 0.9261,
+      "cv_std": 0.0056,
+      "cv_mean_pp": 92.6,
+      "cv_std_pp": 0.6,
+      "n_support": 934
+    },
+    {
+      "kernel": "rbf",
+      "cv_mean": 0.9322,
+      "cv_std": 0.0062,
+      "cv_mean_pp": 93.2,
+      "cv_std_pp": 0.6,
+      "n_support": 1273
+    },
+    {
+      "kernel": "poly",
+      "cv_mean": 0.7783,
+      "cv_std": 0.0093,
+      "cv_mean_pp": 77.8,
+      "cv_std_pp": 0.9,
+      "n_support": 2557
+    }
+  ],
+  "pca": {
+    "explained_variance_ratio": [
+      0.1156,
+      0.0573
+    ],
+    "explained_sum_2d": 0.1729,
+    "kernel_2d": {
+      "linear": {
+        "cv_mean_pp": 87.2,
+        "cv_std_pp": 0.6
+      },
+      "rbf": {
+        "cv_mean_pp": 87.3,
+        "cv_std_pp": 0.8
+      },
+      "poly": {
+        "cv_mean_pp": 77.4,
+        "cv_std_pp": 0.5
+      }
+    }
+  },
+  "rng": 42
+}
