@@ -1,0 +1,164 @@
+downloading Olivetti faces from https://ndownloader.figshare.com/files/5976027 to /Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M14_CNN_batch_norm/data
+data: train=300 test=100  (前20人 vs 后20人, 各200张)
+input shape: (1, 64, 64)
+
+[参数量对比] 第一层若用全连接(64x64->8)需 32776 个权重(+8偏置)
+[参数量对比] 第一层用卷积(3x3, 权值共享)仅需 80 个权重(+8偏置)
+[参数量对比] 卷积相对全连接减少 409.7 倍参数
+[参数量对比] 整个网络总参数: 9442
+
+=== 训练 A: 带 BatchNorm (lr=0.01) ===
+  epoch  1/40  train_loss=0.3544  train_acc=0.737
+  epoch  6/40  train_loss=0.0239  train_acc=0.990
+  epoch 11/40  train_loss=0.0146  train_acc=1.000
+  epoch 16/40  train_loss=0.0096  train_acc=1.000
+  epoch 21/40  train_loss=0.0062  train_acc=1.000
+  epoch 26/40  train_loss=0.0051  train_acc=1.000
+  epoch 31/40  train_loss=0.0051  train_acc=1.000
+  epoch 36/40  train_loss=0.0037  train_acc=1.000
+  epoch 40/40  train_loss=0.0033  train_acc=1.000
+  test_acc=0.9500  time=148.7s  final_loss=0.0033
+
+=== 训练 B: 不带 BatchNorm (lr=0.005, 收敛更慢) ===
+  epoch  1/40  train_loss=0.3466  train_acc=0.450
+  epoch  6/40  train_loss=0.3466  train_acc=0.497
+  epoch 11/40  train_loss=0.3465  train_acc=0.500
+  epoch 16/40  train_loss=0.3465  train_acc=0.570
+  epoch 21/40  train_loss=0.3465  train_acc=0.500
+  epoch 26/40  train_loss=0.3464  train_acc=0.500
+  epoch 31/40  train_loss=0.3464  train_acc=0.543
+  epoch 36/40  train_loss=0.3464  train_acc=0.637
+  epoch 40/40  train_loss=0.3464  train_acc=0.570
+  test_acc=0.6500  time=151.1s  final_loss=0.3464
+
+=== 训练 C: 不带 BN 但 lr=0.01 (对照 exploded) ===
+
+=== 汇总 ===
+{
+  "dataset": "Olivetti Faces (sklearn fetch_olivetti_faces)",
+  "task": "二分类: 前20人 vs 后20人",
+  "n_train": 300,
+  "n_test": 100,
+  "input_shape": [
+    1,
+    64,
+    64
+  ],
+  "conv1_params": 80,
+  "equiv_fc1_params": 32776,
+  "conv_param_reduction_x": 409.7,
+  "total_params": 9442,
+  "arch": "Conv(3x3,8)+ReLU+Pool2+[BN]+Conv(3x3,16)+ReLU+Pool2+[BN]+FC(4096->2)",
+  "acc_with_bn": 0.95,
+  "acc_without_bn": 0.65,
+  "acc_without_bn_biglr": 0.78,
+  "without_bn_biglr_exploded": false,
+  "loss_bn": [
+    0.3544,
+    0.5904,
+    0.0561,
+    0.1123,
+    0.3688,
+    0.0239,
+    0.0193,
+    0.0206,
+    0.0166,
+    0.0137,
+    0.0146,
+    0.0101,
+    0.0131,
+    0.0091,
+    0.0085,
+    0.0096,
+    0.008,
+    0.0071,
+    0.0072,
+    0.0065,
+    0.0062,
+    0.0067,
+    0.006,
+    0.0058,
+    0.0057,
+    0.0051,
+    0.0049,
+    0.0054,
+    0.0047,
+    0.0044,
+    0.0051,
+    0.0049,
+    0.0041,
+    0.0039,
+    0.0038,
+    0.0037,
+    0.0037,
+    0.0036,
+    0.0034,
+    0.0033
+  ],
+  "loss_without_bn": [
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3466,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3465,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3465,
+    0.3465,
+    0.3464,
+    0.3464,
+    0.3465,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464,
+    0.3464
+  ],
+  "cm_with_bn": [
+    [
+      48,
+      2
+    ],
+    [
+      3,
+      47
+    ]
+  ],
+  "cm_without_bn": [
+    [
+      18,
+      32
+    ],
+    [
+      3,
+      47
+    ]
+  ],
+  "time_with_bn_s": 148.7,
+  "time_without_bn_s": 151.1
+}
+
+已保存: stats.json, plot_data.npz
