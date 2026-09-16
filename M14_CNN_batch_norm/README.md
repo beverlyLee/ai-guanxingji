@@ -28,7 +28,7 @@ M14_CNN_batch_norm/
 | 图 | 文件 | 讲一件事 |
 |---|---|---|
 | 图 1 | fig6_arch.png | 网络结构全景（输入 → 两层卷积+池化+BN → 全连接） |
-| 图 2 | fig5_sample_faces.png | 数据集样本：4 人各 8 张，看类内 / 类间差异 |
+| 图 2 | fig5_sample_faces.png | 数据集样本：4 人各 8 张真脸，同一行是同一个人 |
 | 图 3 | fig7_conv_compute.png | 一次卷积怎么算：5×5 窗口 × 3×3 核 → 1.05 |
 | 图 4 | fig1_conv_construction.png | 8 个卷积核 → 8 张特征图 |
 | 图 5 | fig2_param_compare.png | 全连接 32776 vs 卷积 80（对数轴） |

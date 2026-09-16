@@ -52,7 +52,7 @@ for r in range(n_people):
     axes[r, 0].set_ylabel(f"第 {who + 1} 人", fontsize=11, rotation=0, ha="right", va="center")
 fig.suptitle("数据集长这样：40 个人，每人 10 张 64×64 灰度图，同一个人的照片也各有不同",
              fontsize=12.5, y=1.0)
-fig.text(0.5, -0.02, "同一行是同一个人（类内差异），不同行是不同人（类间差异）",
+fig.text(0.5, -0.02, "同一行是同一个人，换了眼镜和表情就长得不太一样；不同行之间轮廓和发型能拉出区别",
          ha="center", fontsize=10, color="#555555")
 save(fig, "fig5_sample_faces.png")
 

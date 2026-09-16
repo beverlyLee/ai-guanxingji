@@ -17,8 +17,8 @@ body = re.sub(r"```[\s\S]*?```", "", text)
 body = re.sub(r"图片占位.*", "", body)
 cn = len(re.findall(r"[\u4e00-\u9fff]", body))
 total = len(re.sub(r"\s", "", body))
-print(f"1) 字数：中文字符 {cn}，去空白总字符 {total}  -> 目标 ~10000（掘金无硬上限）")
-print(f"   {'PASS' if 8000 <= total <= 11000 else 'CHECK（目标区间 8000-11000）'}")
+print(f"1) 字数：中文字符 {cn}，去空白总字符 {total}  -> 硬上限 10000（用户要求精简）")
+print(f"   {'PASS' if 5000 <= total <= 10000 else 'CHECK（目标区间 5000-10000）'}")
 
 # ---------- 2. 黑名单词 ----------
 BLACK = ["赋能", "洞见", "底层逻辑", "硬核", "天花板", "降维打击", "抓手",
