@@ -1,0 +1,1548 @@
+{
+ "family_map": {
+  "限速族": [
+   "限速20",
+   "限速30",
+   "限速50",
+   "限速60",
+   "限速70",
+   "限速80",
+   "解除限速80",
+   "限速100",
+   "限速120",
+   "解除全部限制"
+  ],
+  "禁令族": [
+   "禁止超车",
+   "禁止货车超车",
+   "让行",
+   "停车",
+   "禁止机动车",
+   "禁止货车",
+   "禁止驶入",
+   "解除禁止超车",
+   "解除货车超车"
+  ],
+  "指示族": [
+   "前方右转",
+   "前方左转",
+   "只准直行",
+   "直行或右转",
+   "直行或左转",
+   "靠右行驶",
+   "靠左行驶",
+   "环岛"
+  ],
+  "警告族": [
+   "路口优先",
+   "干道优先",
+   "注意危险",
+   "左急弯",
+   "右急弯",
+   "连续弯道",
+   "路面不平",
+   "路面湿滑",
+   "右侧变窄",
+   "施工",
+   "信号灯",
+   "行人",
+   "儿童过街",
+   "自行车过街",
+   "注意冰雪",
+   "野生动物"
+  ]
+ },
+ "split": {
+  "train_per_class_min": 128,
+  "train_per_class_max": 300,
+  "train_imbalance": 2.34375,
+  "test_per_class_min": 22,
+  "test_per_class_max": 60,
+  "test_imbalance": 2.727272727272727,
+  "train_smallest": "限速20",
+  "train_largest": "限速30"
+ },
+ "A_BN_lr0.01": {
+  "wrong_total": 26,
+  "inner": {
+   "限速族": 7,
+   "禁令族": 3,
+   "指示族": 3,
+   "警告族": 8
+  },
+  "cross": 5,
+  "pairs": [
+   {
+    "true": 1,
+    "pred": 4,
+    "count": 1,
+    "true_name": "限速30",
+    "pred_name": "限速70",
+    "same_family": true
+   },
+   {
+    "true": 2,
+    "pred": 5,
+    "count": 1,
+    "true_name": "限速50",
+    "pred_name": "限速80",
+    "same_family": true
+   },
+   {
+    "true": 3,
+    "pred": 5,
+    "count": 1,
+    "true_name": "限速60",
+    "pred_name": "限速80",
+    "same_family": true
+   },
+   {
+    "true": 4,
+    "pred": 8,
+    "count": 1,
+    "true_name": "限速70",
+    "pred_name": "限速120",
+    "same_family": true
+   },
+   {
+    "true": 5,
+    "pred": 2,
+    "count": 1,
+    "true_name": "限速80",
+    "pred_name": "限速50",
+    "same_family": true
+   },
+   {
+    "true": 5,
+    "pred": 7,
+    "count": 1,
+    "true_name": "限速80",
+    "pred_name": "限速100",
+    "same_family": true
+   },
+   {
+    "true": 5,
+    "pred": 18,
+    "count": 1,
+    "true_name": "限速80",
+    "pred_name": "注意危险",
+    "same_family": false
+   },
+   {
+    "true": 7,
+    "pred": 8,
+    "count": 1,
+    "true_name": "限速100",
+    "pred_name": "限速120",
+    "same_family": true
+   },
+   {
+    "true": 11,
+    "pred": 21,
+    "count": 1,
+    "true_name": "路口优先",
+    "pred_name": "连续弯道",
+    "same_family": true
+   },
+   {
+    "true": 12,
+    "pred": 40,
+    "count": 1,
+    "true_name": "干道优先",
+    "pred_name": "环岛",
+    "same_family": false
+   },
+   {
+    "true": 15,
+    "pred": 9,
+    "count": 1,
+    "true_name": "禁止机动车",
+    "pred_name": "禁止超车",
+    "same_family": true
+   },
+   {
+    "true": 15,
+    "pred": 10,
+    "count": 1,
+    "true_name": "禁止机动车",
+    "pred_name": "禁止货车超车",
+    "same_family": true
+   }
+  ],
+  "wrong_classes": [
+   {
+    "cls": 5,
+    "name": "限速80",
+    "wrong": 3,
+    "n_test": 60,
+    "recall": 0.95
+   },
+   {
+    "cls": 34,
+    "name": "前方左转",
+    "wrong": 3,
+    "n_test": 45,
+    "recall": 0.9333333333333333
+   },
+   {
+    "cls": 15,
+    "name": "禁止机动车",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 1,
+    "name": "限速30",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 2,
+    "name": "限速50",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 3,
+    "name": "限速60",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 4,
+    "name": "限速70",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 7,
+    "name": "限速100",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 11,
+    "name": "路口优先",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 12,
+    "name": "干道优先",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "wrong": 1,
+    "n_test": 36,
+    "recall": 0.9722222222222222
+   },
+   {
+    "cls": 23,
+    "name": "路面湿滑",
+    "wrong": 1,
+    "n_test": 54,
+    "recall": 0.9814814814814815
+   },
+   {
+    "cls": 25,
+    "name": "施工",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 26,
+    "name": "信号灯",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 29,
+    "name": "自行车过街",
+    "wrong": 1,
+    "n_test": 27,
+    "recall": 0.9629629629629629
+   },
+   {
+    "cls": 31,
+    "name": "野生动物",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 35,
+    "name": "只准直行",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 37,
+    "name": "直行或左转",
+    "wrong": 1,
+    "n_test": 22,
+    "recall": 0.9545454545454546
+   },
+   {
+    "cls": 40,
+    "name": "环岛",
+    "wrong": 1,
+    "n_test": 36,
+    "recall": 0.9722222222222222
+   },
+   {
+    "cls": 42,
+    "name": "解除货车超车",
+    "wrong": 1,
+    "n_test": 27,
+    "recall": 0.9629629629629629
+   }
+  ],
+  "top_pred_correct": 60,
+  "pred_of_wrong_top": [
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "count": 3,
+    "share": 0.11538461538461539
+   },
+   {
+    "cls": 30,
+    "name": "注意冰雪",
+    "count": 2,
+    "share": 0.07692307692307693
+   },
+   {
+    "cls": 40,
+    "name": "环岛",
+    "count": 2,
+    "share": 0.07692307692307693
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "count": 2,
+    "share": 0.07692307692307693
+   },
+   {
+    "cls": 5,
+    "name": "限速80",
+    "count": 2,
+    "share": 0.07692307692307693
+   }
+  ],
+  "family": {
+   "限速族": {
+    "n": 514,
+    "wrong": 8,
+    "acc": 0.9844357976653697
+   },
+   "禁令族": {
+    "n": 459,
+    "wrong": 3,
+    "acc": 0.9934640522875817
+   },
+   "指示族": {
+    "n": 355,
+    "wrong": 6,
+    "acc": 0.9830985915492958
+   },
+   "警告族": {
+    "n": 728,
+    "wrong": 9,
+    "acc": 0.9876373626373627
+   }
+  },
+  "acc_final": 0.9873540856031129
+ },
+ "B_noBN_lr0.01": {
+  "wrong_total": 35,
+  "inner": {
+   "限速族": 8,
+   "禁令族": 1,
+   "指示族": 4,
+   "警告族": 15
+  },
+  "cross": 7,
+  "pairs": [
+   {
+    "true": 5,
+    "pred": 2,
+    "count": 4,
+    "true_name": "限速80",
+    "pred_name": "限速50",
+    "same_family": true
+   },
+   {
+    "true": 26,
+    "pred": 18,
+    "count": 4,
+    "true_name": "信号灯",
+    "pred_name": "注意危险",
+    "same_family": true
+   },
+   {
+    "true": 29,
+    "pred": 25,
+    "count": 2,
+    "true_name": "自行车过街",
+    "pred_name": "施工",
+    "same_family": true
+   },
+   {
+    "true": 34,
+    "pred": 36,
+    "count": 2,
+    "true_name": "前方左转",
+    "pred_name": "直行或右转",
+    "same_family": true
+   },
+   {
+    "true": 1,
+    "pred": 2,
+    "count": 1,
+    "true_name": "限速30",
+    "pred_name": "限速50",
+    "same_family": true
+   },
+   {
+    "true": 1,
+    "pred": 7,
+    "count": 1,
+    "true_name": "限速30",
+    "pred_name": "限速100",
+    "same_family": true
+   },
+   {
+    "true": 2,
+    "pred": 5,
+    "count": 1,
+    "true_name": "限速50",
+    "pred_name": "限速80",
+    "same_family": true
+   },
+   {
+    "true": 3,
+    "pred": 9,
+    "count": 1,
+    "true_name": "限速60",
+    "pred_name": "禁止超车",
+    "same_family": false
+   },
+   {
+    "true": 5,
+    "pred": 35,
+    "count": 1,
+    "true_name": "限速80",
+    "pred_name": "只准直行",
+    "same_family": false
+   },
+   {
+    "true": 8,
+    "pred": 7,
+    "count": 1,
+    "true_name": "限速120",
+    "pred_name": "限速100",
+    "same_family": true
+   },
+   {
+    "true": 10,
+    "pred": 20,
+    "count": 1,
+    "true_name": "禁止货车超车",
+    "pred_name": "右急弯",
+    "same_family": false
+   },
+   {
+    "true": 11,
+    "pred": 28,
+    "count": 1,
+    "true_name": "路口优先",
+    "pred_name": "儿童过街",
+    "same_family": true
+   }
+  ],
+  "wrong_classes": [
+   {
+    "cls": 5,
+    "name": "限速80",
+    "wrong": 5,
+    "n_test": 60,
+    "recall": 0.9166666666666666
+   },
+   {
+    "cls": 26,
+    "name": "信号灯",
+    "wrong": 4,
+    "n_test": 60,
+    "recall": 0.9333333333333333
+   },
+   {
+    "cls": 1,
+    "name": "限速30",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 13,
+    "name": "让行",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 25,
+    "name": "施工",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 29,
+    "name": "自行车过街",
+    "wrong": 2,
+    "n_test": 27,
+    "recall": 0.9259259259259259
+   },
+   {
+    "cls": 34,
+    "name": "前方左转",
+    "wrong": 2,
+    "n_test": 45,
+    "recall": 0.9555555555555556
+   },
+   {
+    "cls": 2,
+    "name": "限速50",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 3,
+    "name": "限速60",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 8,
+    "name": "限速120",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 10,
+    "name": "禁止货车超车",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 11,
+    "name": "路口优先",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 19,
+    "name": "左急弯",
+    "wrong": 1,
+    "n_test": 22,
+    "recall": 0.9545454545454546
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "wrong": 1,
+    "n_test": 36,
+    "recall": 0.9722222222222222
+   },
+   {
+    "cls": 23,
+    "name": "路面湿滑",
+    "wrong": 1,
+    "n_test": 54,
+    "recall": 0.9814814814814815
+   },
+   {
+    "cls": 28,
+    "name": "儿童过街",
+    "wrong": 1,
+    "n_test": 54,
+    "recall": 0.9814814814814815
+   },
+   {
+    "cls": 30,
+    "name": "注意冰雪",
+    "wrong": 1,
+    "n_test": 45,
+    "recall": 0.9777777777777777
+   },
+   {
+    "cls": 31,
+    "name": "野生动物",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 35,
+    "name": "只准直行",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 37,
+    "name": "直行或左转",
+    "wrong": 1,
+    "n_test": 22,
+    "recall": 0.9545454545454546
+   },
+   {
+    "cls": 42,
+    "name": "解除货车超车",
+    "wrong": 1,
+    "n_test": 27,
+    "recall": 0.9629629629629629
+   }
+  ],
+  "top_pred_correct": 60,
+  "pred_of_wrong_top": [
+   {
+    "cls": 2,
+    "name": "限速50",
+    "count": 5,
+    "share": 0.14285714285714285
+   },
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "count": 4,
+    "share": 0.11428571428571428
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "count": 4,
+    "share": 0.11428571428571428
+   },
+   {
+    "cls": 23,
+    "name": "路面湿滑",
+    "count": 2,
+    "share": 0.05714285714285714
+   },
+   {
+    "cls": 11,
+    "name": "路口优先",
+    "count": 2,
+    "share": 0.05714285714285714
+   }
+  ],
+  "family": {
+   "限速族": {
+    "n": 514,
+    "wrong": 10,
+    "acc": 0.980544747081712
+   },
+   "禁令族": {
+    "n": 459,
+    "wrong": 4,
+    "acc": 0.9912854030501089
+   },
+   "指示族": {
+    "n": 355,
+    "wrong": 4,
+    "acc": 0.9887323943661972
+   },
+   "警告族": {
+    "n": 728,
+    "wrong": 17,
+    "acc": 0.9766483516483516
+   }
+  },
+  "acc_final": 0.982976653696498
+ },
+ "C_BN_lr0.05": {
+  "wrong_total": 106,
+  "inner": {
+   "限速族": 24,
+   "禁令族": 7,
+   "指示族": 22,
+   "警告族": 38
+  },
+  "cross": 15,
+  "pairs": [
+   {
+    "true": 40,
+    "pred": 37,
+    "count": 12,
+    "true_name": "环岛",
+    "pred_name": "直行或左转",
+    "same_family": true
+   },
+   {
+    "true": 23,
+    "pred": 19,
+    "count": 7,
+    "true_name": "路面湿滑",
+    "pred_name": "左急弯",
+    "same_family": true
+   },
+   {
+    "true": 26,
+    "pred": 18,
+    "count": 6,
+    "true_name": "信号灯",
+    "pred_name": "注意危险",
+    "same_family": true
+   },
+   {
+    "true": 29,
+    "pred": 25,
+    "count": 5,
+    "true_name": "自行车过街",
+    "pred_name": "施工",
+    "same_family": true
+   },
+   {
+    "true": 8,
+    "pred": 7,
+    "count": 4,
+    "true_name": "限速120",
+    "pred_name": "限速100",
+    "same_family": true
+   },
+   {
+    "true": 1,
+    "pred": 2,
+    "count": 3,
+    "true_name": "限速30",
+    "pred_name": "限速50",
+    "same_family": true
+   },
+   {
+    "true": 7,
+    "pred": 5,
+    "count": 3,
+    "true_name": "限速100",
+    "pred_name": "限速80",
+    "same_family": true
+   },
+   {
+    "true": 12,
+    "pred": 13,
+    "count": 3,
+    "true_name": "干道优先",
+    "pred_name": "让行",
+    "same_family": false
+   },
+   {
+    "true": 29,
+    "pred": 30,
+    "count": 3,
+    "true_name": "自行车过街",
+    "pred_name": "注意冰雪",
+    "same_family": true
+   },
+   {
+    "true": 0,
+    "pred": 1,
+    "count": 2,
+    "true_name": "限速20",
+    "pred_name": "限速30",
+    "same_family": true
+   },
+   {
+    "true": 2,
+    "pred": 5,
+    "count": 2,
+    "true_name": "限速50",
+    "pred_name": "限速80",
+    "same_family": true
+   },
+   {
+    "true": 3,
+    "pred": 5,
+    "count": 2,
+    "true_name": "限速60",
+    "pred_name": "限速80",
+    "same_family": true
+   }
+  ],
+  "wrong_classes": [
+   {
+    "cls": 40,
+    "name": "环岛",
+    "wrong": 13,
+    "n_test": 36,
+    "recall": 0.6388888888888888
+   },
+   {
+    "cls": 26,
+    "name": "信号灯",
+    "wrong": 10,
+    "n_test": 60,
+    "recall": 0.8333333333333334
+   },
+   {
+    "cls": 29,
+    "name": "自行车过街",
+    "wrong": 10,
+    "n_test": 27,
+    "recall": 0.6296296296296297
+   },
+   {
+    "cls": 23,
+    "name": "路面湿滑",
+    "wrong": 8,
+    "n_test": 54,
+    "recall": 0.8518518518518519
+   },
+   {
+    "cls": 7,
+    "name": "限速100",
+    "wrong": 7,
+    "n_test": 60,
+    "recall": 0.8833333333333333
+   },
+   {
+    "cls": 1,
+    "name": "限速30",
+    "wrong": 5,
+    "n_test": 60,
+    "recall": 0.9166666666666666
+   },
+   {
+    "cls": 5,
+    "name": "限速80",
+    "wrong": 5,
+    "n_test": 60,
+    "recall": 0.9166666666666666
+   },
+   {
+    "cls": 8,
+    "name": "限速120",
+    "wrong": 4,
+    "n_test": 60,
+    "recall": 0.9333333333333333
+   },
+   {
+    "cls": 12,
+    "name": "干道优先",
+    "wrong": 4,
+    "n_test": 60,
+    "recall": 0.9333333333333333
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "wrong": 4,
+    "n_test": 36,
+    "recall": 0.8888888888888888
+   },
+   {
+    "cls": 3,
+    "name": "限速60",
+    "wrong": 3,
+    "n_test": 60,
+    "recall": 0.95
+   },
+   {
+    "cls": 9,
+    "name": "禁止超车",
+    "wrong": 3,
+    "n_test": 60,
+    "recall": 0.95
+   },
+   {
+    "cls": 11,
+    "name": "路口优先",
+    "wrong": 3,
+    "n_test": 60,
+    "recall": 0.95
+   },
+   {
+    "cls": 28,
+    "name": "儿童过街",
+    "wrong": 3,
+    "n_test": 54,
+    "recall": 0.9444444444444444
+   },
+   {
+    "cls": 34,
+    "name": "前方左转",
+    "wrong": 3,
+    "n_test": 45,
+    "recall": 0.9333333333333333
+   },
+   {
+    "cls": 35,
+    "name": "只准直行",
+    "wrong": 3,
+    "n_test": 60,
+    "recall": 0.95
+   },
+   {
+    "cls": 0,
+    "name": "限速20",
+    "wrong": 2,
+    "n_test": 22,
+    "recall": 0.9090909090909091
+   },
+   {
+    "cls": 2,
+    "name": "限速50",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 14,
+    "name": "停车",
+    "wrong": 2,
+    "n_test": 60,
+    "recall": 0.9666666666666667
+   },
+   {
+    "cls": 4,
+    "name": "限速70",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 10,
+    "name": "禁止货车超车",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 15,
+    "name": "禁止机动车",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 16,
+    "name": "禁止货车",
+    "wrong": 1,
+    "n_test": 45,
+    "recall": 0.9777777777777777
+   },
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 25,
+    "name": "施工",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 31,
+    "name": "野生动物",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 32,
+    "name": "解除全部限制",
+    "wrong": 1,
+    "n_test": 27,
+    "recall": 0.9629629629629629
+   },
+   {
+    "cls": 33,
+    "name": "前方右转",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 36,
+    "name": "直行或右转",
+    "wrong": 1,
+    "n_test": 40,
+    "recall": 0.975
+   },
+   {
+    "cls": 38,
+    "name": "靠右行驶",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   },
+   {
+    "cls": 42,
+    "name": "解除货车超车",
+    "wrong": 1,
+    "n_test": 27,
+    "recall": 0.9629629629629629
+   }
+  ],
+  "top_pred_correct": 60,
+  "pred_of_wrong_top": [
+   {
+    "cls": 37,
+    "name": "直行或左转",
+    "count": 13,
+    "share": 0.12264150943396226
+   },
+   {
+    "cls": 19,
+    "name": "左急弯",
+    "count": 12,
+    "share": 0.11320754716981132
+   },
+   {
+    "cls": 5,
+    "name": "限速80",
+    "count": 10,
+    "share": 0.09433962264150944
+   },
+   {
+    "cls": 13,
+    "name": "让行",
+    "count": 8,
+    "share": 0.07547169811320754
+   },
+   {
+    "cls": 2,
+    "name": "限速50",
+    "count": 7,
+    "share": 0.0660377358490566
+   }
+  ],
+  "family": {
+   "限速族": {
+    "n": 514,
+    "wrong": 30,
+    "acc": 0.9416342412451362
+   },
+   "禁令族": {
+    "n": 459,
+    "wrong": 9,
+    "acc": 0.9803921568627451
+   },
+   "指示族": {
+    "n": 355,
+    "wrong": 22,
+    "acc": 0.9380281690140845
+   },
+   "警告族": {
+    "n": 728,
+    "wrong": 45,
+    "acc": 0.9381868131868132
+   }
+  },
+  "acc_final": 0.9484435797665369
+ },
+ "D_noBN_lr0.05": {
+  "wrong_total": 1975,
+  "inner": {
+   "限速族": 446,
+   "禁令族": 3,
+   "指示族": 0,
+   "警告族": 3
+  },
+  "cross": 1523,
+  "pairs": [
+   {
+    "true": 3,
+    "pred": 1,
+    "count": 60,
+    "true_name": "限速60",
+    "pred_name": "限速30",
+    "same_family": true
+   },
+   {
+    "true": 8,
+    "pred": 1,
+    "count": 60,
+    "true_name": "限速120",
+    "pred_name": "限速30",
+    "same_family": true
+   },
+   {
+    "true": 12,
+    "pred": 1,
+    "count": 60,
+    "true_name": "干道优先",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 26,
+    "pred": 1,
+    "count": 60,
+    "true_name": "信号灯",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 31,
+    "pred": 1,
+    "count": 60,
+    "true_name": "野生动物",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 33,
+    "pred": 1,
+    "count": 60,
+    "true_name": "前方右转",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 35,
+    "pred": 1,
+    "count": 60,
+    "true_name": "只准直行",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 38,
+    "pred": 1,
+    "count": 60,
+    "true_name": "靠右行驶",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 5,
+    "pred": 1,
+    "count": 59,
+    "true_name": "限速80",
+    "pred_name": "限速30",
+    "same_family": true
+   },
+   {
+    "true": 9,
+    "pred": 1,
+    "count": 59,
+    "true_name": "禁止超车",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 10,
+    "pred": 1,
+    "count": 59,
+    "true_name": "禁止货车超车",
+    "pred_name": "限速30",
+    "same_family": false
+   },
+   {
+    "true": 11,
+    "pred": 1,
+    "count": 59,
+    "true_name": "路口优先",
+    "pred_name": "限速30",
+    "same_family": false
+   }
+  ],
+  "wrong_classes": [
+   {
+    "cls": 2,
+    "name": "限速50",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 3,
+    "name": "限速60",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 4,
+    "name": "限速70",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 5,
+    "name": "限速80",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 7,
+    "name": "限速100",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 8,
+    "name": "限速120",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 9,
+    "name": "禁止超车",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 10,
+    "name": "禁止货车超车",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 11,
+    "name": "路口优先",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 12,
+    "name": "干道优先",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 13,
+    "name": "让行",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 14,
+    "name": "停车",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 15,
+    "name": "禁止机动车",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 18,
+    "name": "注意危险",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 26,
+    "name": "信号灯",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 31,
+    "name": "野生动物",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 33,
+    "name": "前方右转",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 35,
+    "name": "只准直行",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 38,
+    "name": "靠右行驶",
+    "wrong": 60,
+    "n_test": 60,
+    "recall": 0.0
+   },
+   {
+    "cls": 17,
+    "name": "禁止驶入",
+    "wrong": 55,
+    "n_test": 60,
+    "recall": 0.08333333333333333
+   },
+   {
+    "cls": 23,
+    "name": "路面湿滑",
+    "wrong": 54,
+    "n_test": 54,
+    "recall": 0.0
+   },
+   {
+    "cls": 28,
+    "name": "儿童过街",
+    "wrong": 54,
+    "n_test": 54,
+    "recall": 0.0
+   },
+   {
+    "cls": 25,
+    "name": "施工",
+    "wrong": 51,
+    "n_test": 60,
+    "recall": 0.15
+   },
+   {
+    "cls": 6,
+    "name": "解除限速80",
+    "wrong": 45,
+    "n_test": 45,
+    "recall": 0.0
+   },
+   {
+    "cls": 16,
+    "name": "禁止货车",
+    "wrong": 45,
+    "n_test": 45,
+    "recall": 0.0
+   },
+   {
+    "cls": 30,
+    "name": "注意冰雪",
+    "wrong": 45,
+    "n_test": 45,
+    "recall": 0.0
+   },
+   {
+    "cls": 34,
+    "name": "前方左转",
+    "wrong": 45,
+    "n_test": 45,
+    "recall": 0.0
+   },
+   {
+    "cls": 36,
+    "name": "直行或右转",
+    "wrong": 40,
+    "n_test": 40,
+    "recall": 0.0
+   },
+   {
+    "cls": 20,
+    "name": "右急弯",
+    "wrong": 36,
+    "n_test": 36,
+    "recall": 0.0
+   },
+   {
+    "cls": 21,
+    "name": "连续弯道",
+    "wrong": 36,
+    "n_test": 36,
+    "recall": 0.0
+   },
+   {
+    "cls": 40,
+    "name": "环岛",
+    "wrong": 36,
+    "n_test": 36,
+    "recall": 0.0
+   },
+   {
+    "cls": 22,
+    "name": "路面不平",
+    "wrong": 34,
+    "n_test": 40,
+    "recall": 0.15
+   },
+   {
+    "cls": 39,
+    "name": "靠左行驶",
+    "wrong": 32,
+    "n_test": 32,
+    "recall": 0.0
+   },
+   {
+    "cls": 24,
+    "name": "右侧变窄",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 27,
+    "name": "行人",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 29,
+    "name": "自行车过街",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 32,
+    "name": "解除全部限制",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 41,
+    "name": "解除禁止超车",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 42,
+    "name": "解除货车超车",
+    "wrong": 27,
+    "n_test": 27,
+    "recall": 0.0
+   },
+   {
+    "cls": 0,
+    "name": "限速20",
+    "wrong": 22,
+    "n_test": 22,
+    "recall": 0.0
+   },
+   {
+    "cls": 19,
+    "name": "左急弯",
+    "wrong": 22,
+    "n_test": 22,
+    "recall": 0.0
+   },
+   {
+    "cls": 37,
+    "name": "直行或左转",
+    "wrong": 20,
+    "n_test": 22,
+    "recall": 0.09090909090909091
+   },
+   {
+    "cls": 1,
+    "name": "限速30",
+    "wrong": 1,
+    "n_test": 60,
+    "recall": 0.9833333333333333
+   }
+  ],
+  "top_pred_correct": 59,
+  "pred_of_wrong_top": [
+   {
+    "cls": 1,
+    "name": "限速30",
+    "count": 1930,
+    "share": 0.9772151898734177
+   },
+   {
+    "cls": 38,
+    "name": "靠右行驶",
+    "count": 26,
+    "share": 0.013164556962025316
+   },
+   {
+    "cls": 28,
+    "name": "儿童过街",
+    "count": 7,
+    "share": 0.0035443037974683543
+   },
+   {
+    "cls": 17,
+    "name": "禁止驶入",
+    "count": 4,
+    "share": 0.0020253164556962027
+   },
+   {
+    "cls": 25,
+    "name": "施工",
+    "count": 3,
+    "share": 0.0015189873417721519
+   }
+  ],
+  "family": {
+   "限速族": {
+    "n": 514,
+    "wrong": 455,
+    "acc": 0.11478599221789883
+   },
+   "禁令族": {
+    "n": 459,
+    "wrong": 454,
+    "acc": 0.010893246187363835
+   },
+   "指示族": {
+    "n": 355,
+    "wrong": 353,
+    "acc": 0.005633802816901409
+   },
+   "警告族": {
+    "n": 728,
+    "wrong": 713,
+    "acc": 0.020604395604395604
+   }
+  },
+  "acc_final": 0.03939688715953307
+ }
+}

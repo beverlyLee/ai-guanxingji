@@ -1,0 +1,154 @@
+[load] 训练 (10772, 32, 32, 3)  测试 (2056, 32, 32, 3)  类别 43
+[norm] 输入形状 (10772, 3, 32, 32)（N,C,H,W）
+[norm] 通道均值 [0.3549 0.3169 0.3385]  通道标准差 [0.2696 0.2525 0.2652]
+
+########## 阶段一 学习率扫描 ##########
+[scan] 训练子样本 (4000, 3, 32, 32)  验证子样本 (800, 3, 32, 32)  epochs=6  batch=64
+[scan] BN=True  lr=0.005  epoch 1/6  loss=3.4512  val_acc= 27.3%  (7s)
+[scan] BN=True  lr=0.005  epoch 2/6  loss=2.1470  val_acc= 62.9%  (15s)
+[scan] BN=True  lr=0.005  epoch 3/6  loss=1.1897  val_acc= 75.9%  (22s)
+[scan] BN=True  lr=0.005  epoch 4/6  loss=0.7054  val_acc= 84.2%  (30s)
+[scan] BN=True  lr=0.005  epoch 5/6  loss=0.4563  val_acc= 88.2%  (37s)
+[scan] BN=True  lr=0.005  epoch 6/6  loss=0.3133  val_acc= 89.1%  (45s)
+[scan] BN=True  lr=0.01   epoch 1/6  loss=3.2603  val_acc= 32.0%  (8s)
+[scan] BN=True  lr=0.01   epoch 2/6  loss=1.6026  val_acc= 71.0%  (15s)
+[scan] BN=True  lr=0.01   epoch 3/6  loss=0.7457  val_acc= 82.8%  (23s)
+[scan] BN=True  lr=0.01   epoch 4/6  loss=0.3730  val_acc= 91.1%  (30s)
+[scan] BN=True  lr=0.01   epoch 5/6  loss=0.2334  val_acc= 91.6%  (37s)
+[scan] BN=True  lr=0.01   epoch 6/6  loss=0.1565  val_acc= 93.9%  (44s)
+[scan] BN=True  lr=0.05   epoch 1/6  loss=3.5020  val_acc= 14.5%  (7s)
+[scan] BN=True  lr=0.05   epoch 2/6  loss=2.4997  val_acc= 33.0%  (14s)
+[scan] BN=True  lr=0.05   epoch 3/6  loss=1.6301  val_acc= 52.9%  (22s)
+[scan] BN=True  lr=0.05   epoch 4/6  loss=1.0128  val_acc= 68.0%  (29s)
+[scan] BN=True  lr=0.05   epoch 5/6  loss=0.6702  val_acc= 83.0%  (37s)
+[scan] BN=True  lr=0.05   epoch 6/6  loss=0.4456  val_acc= 82.5%  (44s)
+[scan] BN=True  lr=0.1    epoch 1/6  loss=3.3666  val_acc= 17.0%  (8s)
+[scan] BN=True  lr=0.1    epoch 2/6  loss=2.6922  val_acc= 25.0%  (15s)
+[scan] BN=True  lr=0.1    epoch 3/6  loss=2.1988  val_acc= 37.5%  (23s)
+[scan] BN=True  lr=0.1    epoch 4/6  loss=1.8076  val_acc= 40.0%  (30s)
+[scan] BN=True  lr=0.1    epoch 5/6  loss=1.4010  val_acc= 56.8%  (38s)
+[scan] BN=True  lr=0.1    epoch 6/6  loss=1.1873  val_acc= 61.6%  (45s)
+[scan] BN=True  lr=0.3    epoch 1/6  loss=3.8530  val_acc=  7.0%  (8s)
+[scan] BN=True  lr=0.3    epoch 2/6  loss=3.2604  val_acc= 13.2%  (15s)
+[scan] BN=True  lr=0.3    epoch 3/6  loss=2.7719  val_acc= 20.2%  (23s)
+[scan] BN=True  lr=0.3    epoch 4/6  loss=2.4875  val_acc= 19.9%  (31s)
+[scan] BN=True  lr=0.3    epoch 5/6  loss=2.2494  val_acc= 35.4%  (38s)
+[scan] BN=True  lr=0.3    epoch 6/6  loss=3.0656  val_acc= 20.8%  (45s)
+[scan] BN=False lr=0.005  epoch 1/6  loss=3.7173  val_acc= 11.1%  (6s)
+[scan] BN=False lr=0.005  epoch 2/6  loss=3.0514  val_acc= 29.5%  (11s)
+[scan] BN=False lr=0.005  epoch 3/6  loss=2.1204  val_acc= 48.0%  (17s)
+[scan] BN=False lr=0.005  epoch 4/6  loss=1.3159  val_acc= 71.9%  (23s)
+[scan] BN=False lr=0.005  epoch 5/6  loss=0.7876  val_acc= 80.8%  (29s)
+[scan] BN=False lr=0.005  epoch 6/6  loss=0.5345  val_acc= 80.1%  (34s)
+[scan] BN=False lr=0.01   epoch 1/6  loss=3.6457  val_acc= 13.4%  (6s)
+[scan] BN=False lr=0.01   epoch 2/6  loss=2.7241  val_acc= 38.1%  (12s)
+[scan] BN=False lr=0.01   epoch 3/6  loss=1.6706  val_acc= 61.5%  (18s)
+[scan] BN=False lr=0.01   epoch 4/6  loss=0.8816  val_acc= 75.5%  (24s)
+[scan] BN=False lr=0.01   epoch 5/6  loss=0.5756  val_acc= 85.2%  (30s)
+[scan] BN=False lr=0.01   epoch 6/6  loss=0.3437  val_acc= 87.9%  (36s)
+[scan] BN=False lr=0.05   epoch 1/6  loss=3.6966  val_acc= 14.8%  (6s)
+[scan] BN=False lr=0.05   epoch 2/6  loss=2.6996  val_acc= 30.9%  (11s)
+[scan] BN=False lr=0.05   epoch 3/6  loss=1.9772  val_acc= 44.9%  (18s)
+[scan] BN=False lr=0.05   epoch 4/6  loss=1.4465  val_acc= 52.6%  (23s)
+[scan] BN=False lr=0.05   epoch 5/6  loss=1.2510  val_acc= 66.5%  (30s)
+[scan] BN=False lr=0.05   epoch 6/6  loss=1.1570  val_acc= 59.2%  (35s)
+[scan] BN=False lr=0.1    epoch 1/6  loss=3.8436  val_acc=  7.8%  (5s)
+[scan] BN=False lr=0.1    epoch 2/6  loss=3.3217  val_acc= 18.5%  (11s)
+[scan] BN=False lr=0.1    epoch 3/6  loss=2.9068  val_acc= 25.4%  (16s)
+[scan] BN=False lr=0.1    epoch 4/6  loss=2.6829  val_acc= 26.6%  (22s)
+[scan] BN=False lr=0.1    epoch 5/6  loss=2.4579  val_acc= 26.1%  (27s)
+[scan] BN=False lr=0.1    epoch 6/6  loss=2.5837  val_acc= 31.8%  (33s)
+[scan] BN=False lr=0.3    epoch 1/6  loss=6.1403  val_acc=  2.4%  (6s)
+[scan] BN=False lr=0.3    epoch 2/6  loss=3.7416  val_acc=  3.8%  (12s)
+[scan] BN=False lr=0.3    epoch 3/6  loss=3.7338  val_acc=  2.9%  (17s)
+[scan] BN=False lr=0.3    epoch 4/6  loss=3.7339  val_acc=  3.8%  (23s)
+[scan] BN=False lr=0.3    epoch 5/6  loss=3.7320  val_acc=  2.6%  (29s)
+[scan] BN=False lr=0.3    epoch 6/6  loss=3.7362  val_acc=  3.1%  (34s)
+
+########## 阶段二 全量训练集正式对照（2x2）##########
+[scan 结论] 带 BN 最优 lr=0.01 -> 93.9%
+[scan 结论] 不带 BN 最优 lr=0.01 -> 87.9%
+[scan 结论] 同一学习率 lr=0.01 下：带 BN 93.9%  vs 不带 BN 87.9%
+
+===== 配置 A_BN_lr0.01：use_bn=True  lr=0.01  epochs=12 channels=(16, 32, 64) [带 BN，扫描出的 BN 最优学习率] =====
+[参数] 卷积 23,584 + BN 224 + 全连接 68,395 = 合计 92,203
+[epoch 0] 未训练时测试准确率 = 0.0229
+[A_BN_lr0.01] epoch  1/12  loss=2.1020  test_acc=0.7938  (18.4s)
+[A_BN_lr0.01] epoch  2/12  loss=0.4191  test_acc=0.9095  (18.3s)
+[A_BN_lr0.01] epoch  3/12  loss=0.1789  test_acc=0.9572  (29.3s)
+[A_BN_lr0.01] epoch  4/12  loss=0.0940  test_acc=0.9723  (22.5s)
+[A_BN_lr0.01] epoch  5/12  loss=0.0559  test_acc=0.9771  (21.6s)
+[A_BN_lr0.01] epoch  6/12  loss=0.0360  test_acc=0.9752  (21.7s)
+[A_BN_lr0.01] epoch  7/12  loss=0.0296  test_acc=0.9796  (20.9s)
+[A_BN_lr0.01] epoch  8/12  loss=0.0178  test_acc=0.9839  (20.7s)
+[A_BN_lr0.01] epoch  9/12  loss=0.0127  test_acc=0.9864  (20.8s)
+[A_BN_lr0.01] epoch 10/12  loss=0.0105  test_acc=0.9859  (20.9s)
+[A_BN_lr0.01] epoch 11/12  loss=0.0086  test_acc=0.9864  (20.7s)
+[A_BN_lr0.01] epoch 12/12  loss=0.0068  test_acc=0.9874  (20.8s)
+[A_BN_lr0.01] 训练结束，最终测试准确率 = 0.9874，总耗时 258.2s
+
+===== 配置 B_noBN_lr0.01：use_bn=False  lr=0.01  epochs=12 channels=(16, 32, 64) [不带 BN，学习率与 A 完全相同] =====
+[参数] 卷积 23,584 + BN 0 + 全连接 68,395 = 合计 91,979
+[epoch 0] 未训练时测试准确率 = 0.0229
+[B_noBN_lr0.01] epoch  1/12  loss=2.6276  test_acc=0.6304  (16.6s)
+[B_noBN_lr0.01] epoch  2/12  loss=0.6204  test_acc=0.8925  (16.3s)
+[B_noBN_lr0.01] epoch  3/12  loss=0.2418  test_acc=0.9421  (16.4s)
+[B_noBN_lr0.01] epoch  4/12  loss=0.1266  test_acc=0.9553  (16.0s)
+[B_noBN_lr0.01] epoch  5/12  loss=0.0667  test_acc=0.9489  (15.9s)
+[B_noBN_lr0.01] epoch  6/12  loss=0.0584  test_acc=0.9718  (15.9s)
+[B_noBN_lr0.01] epoch  7/12  loss=0.0346  test_acc=0.9757  (15.8s)
+[B_noBN_lr0.01] epoch  8/12  loss=0.0208  test_acc=0.9732  (15.9s)
+[B_noBN_lr0.01] epoch  9/12  loss=0.0158  test_acc=0.9796  (15.9s)
+[B_noBN_lr0.01] epoch 10/12  loss=0.0100  test_acc=0.9815  (16.1s)
+[B_noBN_lr0.01] epoch 11/12  loss=0.0053  test_acc=0.9810  (15.9s)
+[B_noBN_lr0.01] epoch 12/12  loss=0.0041  test_acc=0.9830  (16.0s)
+[B_noBN_lr0.01] 训练结束，最终测试准确率 = 0.9830，总耗时 194.3s
+
+===== 配置 C_BN_lr0.05：use_bn=True  lr=0.05  epochs=12 channels=(16, 32, 64) [带 BN，学习率放大 5 倍] =====
+[参数] 卷积 23,584 + BN 224 + 全连接 68,395 = 合计 92,203
+[epoch 0] 未训练时测试准确率 = 0.0229
+[C_BN_lr0.05] epoch  1/12  loss=2.0733  test_acc=0.7301  (20.4s)
+[C_BN_lr0.05] epoch  2/12  loss=0.4830  test_acc=0.8765  (20.6s)
+[C_BN_lr0.05] epoch  3/12  loss=0.2392  test_acc=0.9300  (20.7s)
+[C_BN_lr0.05] epoch  4/12  loss=0.1312  test_acc=0.9538  (20.4s)
+[C_BN_lr0.05] epoch  5/12  loss=0.0848  test_acc=0.9202  (20.9s)
+[C_BN_lr0.05] epoch  6/12  loss=0.0611  test_acc=0.9762  (23.1s)
+[C_BN_lr0.05] epoch  7/12  loss=0.0277  test_acc=0.9771  (22.2s)
+[C_BN_lr0.05] epoch  8/12  loss=0.0128  test_acc=0.9815  (21.0s)
+[C_BN_lr0.05] epoch  9/12  loss=0.0115  test_acc=0.9781  (21.1s)
+[C_BN_lr0.05] epoch 10/12  loss=0.0135  test_acc=0.9762  (21.0s)
+[C_BN_lr0.05] epoch 11/12  loss=0.0177  test_acc=0.9776  (21.1s)
+[C_BN_lr0.05] epoch 12/12  loss=0.0329  test_acc=0.9484  (21.0s)
+[C_BN_lr0.05] 训练结束，最终测试准确率 = 0.9484，总耗时 255.3s
+
+===== 配置 D_noBN_lr0.05：use_bn=False  lr=0.05  epochs=12 channels=(16, 32, 64) [不带 BN，学习率放大 5 倍] =====
+[参数] 卷积 23,584 + BN 0 + 全连接 68,395 = 合计 91,979
+[epoch 0] 未训练时测试准确率 = 0.0229
+[D_noBN_lr0.05] epoch  1/12  loss=3.0273  test_acc=0.5088  (16.3s)
+[D_noBN_lr0.05] epoch  2/12  loss=1.2970  test_acc=0.6036  (16.4s)
+[D_noBN_lr0.05] epoch  3/12  loss=1.2478  test_acc=0.6955  (15.5s)
+[D_noBN_lr0.05] epoch  4/12  loss=0.9877  test_acc=0.6177  (14.6s)
+[D_noBN_lr0.05] epoch  5/12  loss=1.1039  test_acc=0.6858  (14.7s)
+[D_noBN_lr0.05] epoch  6/12  loss=1.3691  test_acc=0.5102  (15.0s)
+[D_noBN_lr0.05] epoch  7/12  loss=1.4532  test_acc=0.3755  (15.2s)
+[D_noBN_lr0.05] epoch  8/12  loss=1.4965  test_acc=0.6177  (14.8s)
+[D_noBN_lr0.05] epoch  9/12  loss=1.6704  test_acc=0.6192  (14.9s)
+[D_noBN_lr0.05] epoch 10/12  loss=1.3318  test_acc=0.6868  (15.4s)
+[D_noBN_lr0.05] epoch 11/12  loss=1.1859  test_acc=0.6430  (15.0s)
+[D_noBN_lr0.05] epoch 12/12  loss=1.9251  test_acc=0.0394  (14.9s)
+[D_noBN_lr0.05] 训练结束，最终测试准确率 = 0.0394，总耗时 184.2s
+
+[账本] 一层 3x3 卷积(3->16)：3x3x3=27 个权重 x 16 个输出通道 + 16 个偏置 = 448 个参数
+[账本] 它产出的输出是 16x32x32 = 16,384 个数
+[账本] 等价全连接（3072->16,384，每个输出都看全部 3072 个输入）= 50,348,032 个参数
+[账本] 倍数分解：局部连接 3073/28 = 109.75 倍 x 权重共享 16384/16 = 1024 倍 = 112,384 倍
+[混淆] 最容易混的前 5 对：
+    限速80 -> 误判成 注意危险  (1 次)
+    限速100 -> 误判成 限速120  (1 次)
+    路口优先 -> 误判成 连续弯道  (1 次)
+    禁止机动车 -> 误判成 禁止货车超车  (1 次)
+    右急弯 -> 误判成 注意危险  (1 次)
+
+[save] /Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/stats.json
+[save] /Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/plot_data.npz
+[done] 总耗时 1295.2s

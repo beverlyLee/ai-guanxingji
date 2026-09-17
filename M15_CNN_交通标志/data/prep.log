@@ -1,0 +1,7 @@
+[download] 已有且校验通过：/Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/GTSRB-Training_fixed.zip
+[extract] 已有解压目录：/Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/GTSRB_raw/GTSRB
+[data] 类别目录：/Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/GTSRB_raw/GTSRB/Training
+[data] 类别数：43
+[data] 原始每类样本数：min=150 max=1500 mean=620 total=26640
+[data] 取用后 训练 (10772, 32, 32, 3) / 测试 (2056, 32, 32, 3)
+[data] 已写出：/Users/liboyang/WorkBuddy/2026-08-13-17-53-26/ai-guanxingji/M15_CNN_交通标志/data/gtsrb32.npz  (33.6 MB)

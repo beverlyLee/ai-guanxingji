@@ -1,0 +1,4 @@
+# 数据中间产物与原始包不入库，prepare_data.py 可自动重跑生成
+data/GTSRB_raw/
+data/GTSRB-Training_fixed.zip
+data/gtsrb32.npz
