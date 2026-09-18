@@ -1,0 +1,9 @@
+# 重数据文件不入库：prepare_data.py / train_transformer.py 可自动下载并重建
+data/en-fr.txt.zip
+data/Tatoeba.en-fr.en
+data/Tatoeba.en-fr.fr
+data/pairs.pt
+data/transformer.pt
+data/train_stdout.log
+# 运营物料本地留档（与系列约定一致，不入库）
+发布物料/

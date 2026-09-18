@@ -1,0 +1,56 @@
+{
+  "dataset": {
+    "name": "Tatoeba 英-法平行句对 (OPUS 镜像 v20190709)",
+    "url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v20190709/moses/en-fr.txt.zip",
+    "pairs_raw": 257420,
+    "pairs_used": 219176,
+    "dropped_too_long": 32902,
+    "dropped_bad_chars": 5342,
+    "max_len_per_side": 10,
+    "src_vocab_size": 8000,
+    "tgt_vocab_size": 8000,
+    "train_size": 60000,
+    "test_size": 6000,
+    "train_cap": 60000,
+    "test_cap": 6000,
+    "note": "训练/测试仅使用过滤后语料的抽样子集；词表由全量过滤语料统计得到",
+    "src_len_mean": 5.676,
+    "src_len_max": 10,
+    "tgt_len_mean": 6.079,
+    "tgt_len_max": 10
+  },
+  "sample_pairs": [
+    {
+      "en": "let's try something.",
+      "fr": "essayons quelque chose !"
+    },
+    {
+      "en": "let's try something.",
+      "fr": "tentons quelque chose !"
+    },
+    {
+      "en": "let's try something.",
+      "fr": "essayons quelque chose."
+    },
+    {
+      "en": "i have to go to sleep.",
+      "fr": "je dois aller dormir."
+    },
+    {
+      "en": "i have to go to sleep.",
+      "fr": "il faut que j'aille dormir."
+    },
+    {
+      "en": "i can't abide that fellow.",
+      "fr": "je ne supporte pas ce type."
+    },
+    {
+      "en": "i can't bear that fellow.",
+      "fr": "je ne supporte pas ce type."
+    },
+    {
+      "en": "i can't stand that guy.",
+      "fr": "je ne supporte pas ce type."
+    }
+  ]
+}
