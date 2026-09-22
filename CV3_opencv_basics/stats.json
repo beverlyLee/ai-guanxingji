@@ -1,0 +1,113 @@
+{
+  "img_h": 512,
+  "img_w": 512,
+  "img_pixels": 262144,
+  "hist_mode_bin": 27,
+  "hist_mode_value": 0.1059,
+  "hist_mode_count": 4957,
+  "hist_mode_count_pct": 1.89,
+  "orig_mean": 0.5061,
+  "orig_std": 0.2888,
+  "orig_dark_frac": 28.29,
+  "orig_bright_frac": 16.16,
+  "orig_entropy": 7.2317,
+  "hazy_A": 0.85,
+  "hazy_t": 0.35,
+  "hazy_mean": 0.7296,
+  "hazy_std": 0.1011,
+  "hazy_std_drop_pct": 65.0,
+  "hazy_mode_bin": 150,
+  "hazy_mode_value": 0.5882,
+  "hazy_entropy": 5.7356,
+  "eq_max_abs_diff": 0.01543,
+  "cdf_table": [
+    {
+      "gray": 0,
+      "gray_norm": 0.0,
+      "cdf": 0.0,
+      "s": 0
+    },
+    {
+      "gray": 16,
+      "gray_norm": 0.0627,
+      "cdf": 0.0638,
+      "s": 16
+    },
+    {
+      "gray": 32,
+      "gray_norm": 0.1255,
+      "cdf": 0.2378,
+      "s": 61
+    },
+    {
+      "gray": 48,
+      "gray_norm": 0.1882,
+      "cdf": 0.2802,
+      "s": 71
+    },
+    {
+      "gray": 64,
+      "gray_norm": 0.251,
+      "cdf": 0.2967,
+      "s": 76
+    },
+    {
+      "gray": 96,
+      "gray_norm": 0.3765,
+      "cdf": 0.3165,
+      "s": 81
+    },
+    {
+      "gray": 128,
+      "gray_norm": 0.502,
+      "cdf": 0.3597,
+      "s": 92
+    },
+    {
+      "gray": 160,
+      "gray_norm": 0.6275,
+      "cdf": 0.5855,
+      "s": 149
+    },
+    {
+      "gray": 192,
+      "gray_norm": 0.7529,
+      "cdf": 0.7047,
+      "s": 180
+    },
+    {
+      "gray": 224,
+      "gray_norm": 0.8784,
+      "cdf": 0.9859,
+      "s": 251
+    },
+    {
+      "gray": 255,
+      "gray_norm": 1.0,
+      "cdf": 1.0,
+      "s": 255
+    }
+  ],
+  "eq_first_nonzero_gray": 0,
+  "eq_cdf_at_mode": 0.1715,
+  "img_eq_std": 0.2886,
+  "hazy_eq_std": 0.1821,
+  "hazy_eq_std_gain": 1.8,
+  "hazy_eq_entropy": 5.5527,
+  "fft_dc_magnitude": 132676.5,
+  "fft_total_energy": 23330000000.0,
+  "fft_low_energy_pct_D10": 96.84,
+  "fft_low_energy_pct_D30": 98.46,
+  "fft_low_energy_pct_D60": 99.22,
+  "fft_high_energy_pct_D60": 0.78,
+  "lp_sigma": 20.0,
+  "lp_energy_keep_pct": 97.28,
+  "lp_std": 0.2723,
+  "lp_std_drop_pct": 5.71,
+  "hp_energy_keep_pct": 1.58,
+  "edge_energy_orig": 0.03422,
+  "edge_energy_lp": 0.00975,
+  "edge_energy_hp": 0.01797,
+  "edge_energy_lp_ratio": 0.285,
+  "edge_energy_hp_ratio": 0.525
+}
