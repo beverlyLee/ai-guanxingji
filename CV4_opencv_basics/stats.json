@@ -1,0 +1,109 @@
+{
+  "mnist": {
+    "n_train": 60000,
+    "n_test": 10000,
+    "img_h": 28,
+    "img_w": 28,
+    "class_counts": {
+      "0": 5923,
+      "1": 6742,
+      "2": 5958,
+      "3": 6131,
+      "4": 5842,
+      "5": 5421,
+      "6": 5918,
+      "7": 6265,
+      "8": 5851,
+      "9": 5949
+    },
+    "mlp_test_acc": 0.9557
+  },
+  "credit_card": {
+    "n_digits_truth": 16,
+    "n_digits_detected": 16,
+    "n_recognized_correct": 15,
+    "card_accuracy": 0.9375,
+    "wrong_digits": [
+      {
+        "pos": 15,
+        "gt": 3,
+        "pred": 9,
+        "box_w": 32,
+        "box_h": 32
+      }
+    ],
+    "box_ar_min": 1.0,
+    "box_ar_max": 1.0,
+    "box_ar_mean": 1.0,
+    "otsu_threshold": 115
+  },
+  "parking": {
+    "n_frames": 30,
+    "precision": 1.0,
+    "recall": 0.9878,
+    "f1": 0.9939,
+    "n_rows": 2,
+    "n_cols": 6,
+    "occ_prob": 0.5,
+    "area_thresh": 600,
+    "tp": 162,
+    "fp": 0,
+    "fn": 2,
+    "n_gt_total": 164,
+    "n_det_total": 162,
+    "bays_per_frame": 12,
+    "bay_box_w": 104,
+    "bay_box_h": 164,
+    "occ_block_w": 88,
+    "occ_block_h": 148,
+    "occ_block_area": 13024,
+    "otsu_note": "全局 Otsu 阈值（THRESH_BINARY_INV），占用块为均匀暗色故不用自适应阈值"
+  },
+  "panorama": {
+    "n_keypoints_img1": 4566,
+    "n_keypoints_img2": 3866,
+    "n_matches_ratio_test": 2972,
+    "n_ransac_inliers": 2841,
+    "inlier_ratio": 0.9559,
+    "mean_reproj_error_px": 0.141,
+    "recovered_vs_gt_homography_err_px": 0.03,
+    "ransac_threshold_px": 5.0,
+    "rotation_deg": 5.0,
+    "scale": 1.03,
+    "translation_px": [
+      50,
+      25
+    ],
+    "ransac_conf_p": 0.99,
+    "ransac_sample_size": 4,
+    "ransac_iters_table": [
+      [
+        0.3,
+        567
+      ],
+      [
+        0.4,
+        178
+      ],
+      [
+        0.5,
+        72
+      ],
+      [
+        0.6,
+        34
+      ],
+      [
+        0.8,
+        9
+      ],
+      [
+        0.9559,
+        3
+      ]
+    ],
+    "ratio_test_thresh": 0.8,
+    "sift_descriptor_dim": 128,
+    "homography_dof": 8
+  }
+}
