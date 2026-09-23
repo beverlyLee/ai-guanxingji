@@ -41,7 +41,7 @@
 
 | 篇 | 主题 | 知识点 | 数据 |
 |----|------|--------|------|
-| [CV4](CV4_opencv_basics) | 扫信用卡号、找空车位、拼全景照：OpenCV 那几招能串起几个真项目？ | 灰度化 / Otsu 阈值 / 形态学开闭 / 轮廓 / SIFT / 单应 / RANSAC | MNIST + OpenCV 官方示例图 building.jpg（脚本自动下载）+ 合成停车场示意图 |
+| [CV4](CV4_opencv_basics) | 阈值、形态学、轮廓、特征点：同一套 OpenCV 基础，为什么换个场景就从全中变全错？ | 灰度化 / Otsu 类间方差 / 形态学开闭 / 轮廓与面积筛选 / SIFT / 比值检验 / 单应 4 点解 / RANSAC | MNIST + OpenCV 官方示例图 building.jpg（脚本自动下载）+ 合成停车场示意图 |
 
 > CV1–CV3 为早期 OpenCV 基础篇，已于 2026-09-22 从仓库移除，内容可在 git 历史中追溯。
 

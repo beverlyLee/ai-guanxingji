@@ -148,7 +148,7 @@ derived = [
      f"{pk['area_thresh'] / pk['occ_block_area'] * 100:.1f}"),
     ("16 位期望错数", f"{cc['n_digits_truth'] * (1 - mn['mlp_test_acc']):.2f}",
      f"{cc['n_digits_truth'] * (1 - mn['mlp_test_acc']):.2f}"),
-    ("召回率算式", f"{pk['tp']} 除以 {pk['n_gt_total']}", f"{pk['recall']:.4f}"),
+    ("召回率算式", f"{pk['tp']} / {pk['n_gt_total']}", f"{pk['recall']:.4f}"),
     ("内点率算式", f"{pn['n_ransac_inliers']} 对", f"{pn['inlier_ratio']:.4f}"),
 ]
 for label, tok, _v in derived:
