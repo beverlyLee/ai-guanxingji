@@ -1,0 +1,65 @@
+{
+  "generated_by": "code/experiment.py",
+  "note": "参数量/MACs 由架构定义手算；ResNet 卷积带 BN 无偏置，其余网络卷积带偏置无 BN；GoogLeNet 引论文公开值",
+  "architectures": {
+    "LeNet-5": {
+      "params": 61706,
+      "params_M": 0.0617,
+      "macs": 416520,
+      "macs_G": 0.0004,
+      "gflops_macx2": 0.0008,
+      "imagenet_top1": null
+    },
+    "AlexNet": {
+      "params": 60965224,
+      "params_M": 60.9652,
+      "macs": 724406816,
+      "macs_G": 0.7244,
+      "gflops_macx2": 1.4488,
+      "imagenet_top1": 0.629
+    },
+    "VGG16": {
+      "params": 138357544,
+      "params_M": 138.3575,
+      "macs": 15470264320,
+      "macs_G": 15.4703,
+      "gflops_macx2": 30.9405,
+      "imagenet_top1": 0.715
+    },
+    "ResNet-50": {
+      "params": 25557032,
+      "params_M": 25.557,
+      "macs": 3729522688,
+      "macs_G": 3.7295,
+      "gflops_macx2": 7.459,
+      "imagenet_top1": 0.753
+    },
+    "GoogLeNet(Inception-v1)": {
+      "params": 6998216,
+      "params_M": 6.9982,
+      "macs": 1534464704,
+      "macs_G": 1.5345,
+      "gflops_macx2": 3.069,
+      "source": "Szegedy et al. 2015 (CVPR), 含两个辅助分类器",
+      "imagenet_top1": 0.693
+    }
+  },
+  "receptive_field": {
+    "VGG16_rf_at_stage_pools": {
+      "after_stage1_pool": 6,
+      "after_stage2_pool": 16,
+      "after_stage3_pool": 40,
+      "after_stage4_pool": 76,
+      "final": 212
+    },
+    "ResNet-50_final_rf": 427
+  },
+  "degradation": {
+    "dataset": "CIFAR-10",
+    "plain_20_layer_train_err": 0.0724,
+    "plain_56_layer_train_err": 0.0997,
+    "resnet_20_layer_train_err": 0.0705,
+    "resnet_56_layer_train_err": 0.0641,
+    "source": "He et al. 2016, Deep Residual Learning, Fig.1"
+  }
+}
