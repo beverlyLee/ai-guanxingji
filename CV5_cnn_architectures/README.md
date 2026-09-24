@@ -12,18 +12,31 @@ CV5_cnn_architectures/
 ├── stats.json             # 全文所有数字的唯一来源
 ├── code/
 │   ├── experiment.py      # 从架构定义手算 params/MACs/感受野，产出 stats.json
-│   ├── figures.py         # 从 stats.json 重生 fig1-6
-│   └── qc_article.py      # 文章 QC：字数/黑名单/破折号/粗体/数学占比/数字一致性/图片数
-├── figures/               # fig1-6
+│   ├── figures.py         # 从 stats.json 重生 fig1-10
+│   └── qc_article.py      # 文章 QC：双口径字数/黑名单/破折号/粗体/数学占比/数字一致性/图片数
+├── figures/               # fig1-10
 └── requirements.txt
 ```
 
-## 六张配图
+## 十张配图
+
+前 5 张偏原理，后 5 张偏流程。五代架构各有一张「从输入到输出」的算法流程图，读者可以先看整体走法，再回到正文看推导。
+
+### 算法流程图（每一代一张）
+
+| 图 | 文件 | 讲一件事 |
+|---|---|---|
+| 图 2 | fig2_lenet.png | LeNet-5 全流程：7 层怎么串起来，每层输出张量形状与本层参数量（C1 156 / C3 2416 / C5 48120 / F6 10164 / 输出层 850）；底部对照「同样生成 4704 个神经元，全连接要 480 万参数，卷积只要 156 个」 |
+| 图 7 | fig7_alexnet.png | AlexNet 全流程：8 层怎么走 + 双卡分组带（Conv1/2/4/5 各切成两组，Conv3 跨卡全连，到全连接层才合并）+ 三件套装机位置（ReLU 覆盖 Conv1–5，Dropout p=0.5 覆盖两个 FC4096，数据增强在输入端） |
+| 图 8 | fig8_vgg.png | VGG16 全流程：5 个 stage 全用 3×3 小核、每过池化通道翻倍；每段卷积参数量逐段标出，点出 FC4096 单层 102,764,544（74.3%）吃掉大头，而卷积部分合计只有 14,714,688（约 1471 万，仅 10.6%） |
+| 图 9 | fig9_googlenet.png | GoogLeNet 全流程：stem → 9 个 Inception → 全局平均池化 → FC1000；左上 inset 展开 Inception 内部 4 条并行分支，从 4a / 4d 引虚线到两个只训练时用的辅助分类器 |
+| 图 10 | fig10_resnet.png | ResNet-50 全流程：4 个 stage 的块数 × bottleneck；左下 inset 展开瓶颈块（1×1 降维 → 3×3 → 1×1 升维，shortcut 直连相加，通道/尺寸变化处走 projection shortcut）；右下退化柱状图 |
+
+### 原理与数据图
 
 | 图 | 文件 | 讲一件事 |
 |---|---|---|
 | 图 1 | fig1_macro.png | 宏观：参数怎么先爆炸（VGG 1.38 亿）再收敛，top-1 却一路向上 |
-| 图 2 | fig2_lenet.png | LeNet-5 结构：CNN 的原始模板 |
 | 图 3 | fig3_vgg_stack.png | 三个 3×3 等效一个 7×7，但参数更省 |
 | 图 4 | fig4_inception.png | Inception 多分支 + 1×1 瓶颈 |
 | 图 5 | fig5_resnet.png | 残差块结构 + 退化曲线（plain 越深越差，ResNet 越深越好）|
@@ -39,7 +52,7 @@ python figures.py      # 产出 ../figures/*.png
 python qc_article.py   # 文章自检
 ```
 
-不需要下载任何数据集，也不需要安装深度学习框架。所有数字由 `experiment.py` 从架构定义逐层累加得到，`figures.py` 只读 `stats.json` 出图。
+不需要下载任何数据集，也不需要安装深度学习框架。所有数字由 `experiment.py` 从架构定义逐层累加得到，`figures.py` 只读 `stats.json` 出图（只有 5 张流程图会额外 import `experiment.py` 里的层定义函数来现算分段参数量，并用 assert 卡住总数与 `stats.json` 一致）。
 
 ## 关键数字（均来自 stats.json）
 
@@ -56,6 +69,8 @@ python qc_article.py   # 文章自检
 | 感受野（VGG16） | stage 池化后 6 / 16 / 40 / 76，末层 212 |
 | 感受野（ResNet-50） | 末层 427 |
 | 退化（CIFAR-10 训练误差） | plain 20 层 7.24% / plain 56 层 9.97% / ResNet 20 层 7.05% / ResNet 56 层 6.41% |
+| VGG16 参数分布 | 卷积 14,714,688（1471 万，10.6%）+ 全连接 123,642,856（1.236 亿，89.4%），其中 FC1 单层 102,764,544 占 74.3% |
+| AlexNet 参数分布 | 卷积 2,334,080（233 万）+ 全连接 58,631,144（5863 万） |
 | ResNet-50 卷积 vs 全连接 | 25.557M 参数，带 BN 无偏置，每个卷积层多 2×c_out 的 BN 参数 |
 
 ## 踩过的坑
@@ -63,4 +78,8 @@ python qc_article.py   # 文章自检
 - 不同网络的卷积层参数结构不一样：LeNet/AlexNet/VGG 带偏置无 BN，ResNet 带 BN 无偏置。脚本里若用同一个默认值处理所有网络，ResNet 的参数量就会算错（曾算出 28,385,256，正确值是 25,557,032）。
 - 残差块的 shortcut 分支不能直接复用主路的卷积函数，否则会改变主路尺寸造成双重下采样，网络会过早坍缩到 1×1，MACs 也会偏低。本文用一个独立的 `add_conv_params()` 只累加参数、不动尺寸。
 - GoogLeNet 的参数量引论文公开值（Szegedy et al. 2015），不逐层重算。原因是原论文的 Inception 结构里有较多工程细节（如辅助分类器、逐个模块的通道配置），逐层手算反而容易和公开值偏离。
+- **AlexNet 的输入是 227×227，不是论文正文写的 224×224**。按 11×11 卷积核配步长 4，必须能被 4 除尽才不会出现半个像素，227 才是真实实现吃进去的尺寸。`build_alexnet()` 用 227，MACs 也按 227 算；正文里已在 §2 开头写明这一点。图 7 里同样标了 227，别照着 224 去改图。
+- **写死的手抄数字容易和图对不上**。初稿 §3.3 手写成「卷积层约 1479 万」，而 `build_vgg16()` 逐段累加是 14,714,688（约 1471 万）；同段的 FC1 写「约 1.027 亿」，实际 102,764,544 是 1.028 亿。两处都在补流程图时被图上的数字反查出来并改正。凡是分段小计，都该从脚本现算而不是手抄。
 - matplotlib 画中文要在 `rcParams` 里把 `font.sans-serif` 设成 `STHeiti` 并关掉 `axes.unicode_minus`，否则负号会变成方块。图一律 `figure.dpi=150` / `savefig.dpi=300`。
+- 画流程图时，方框里的自动换行文字会撑破盒子：`box()` 只知道盒子宽高，不知道文字实际占多宽。VGG 的 stage 里写 `256 + 256 + 256` 横向就溢出，改成 `3 × conv3-256` 才收进 1.70 宽的盒子。同类问题还有 ResNet 瓶颈图的 projection 说明行和退化柱状图的标题，最后都是把长句拆成多行解决。
+- 流程图用 matplotlib 而不是 draw.io：本机没有 draw.io CLI（无 brew、无 `draw.io.app`），而本仓库的约定是「配图必须能由代码重生」。手画的 `.drawio` 改一个数字就要重画，会破坏 `experiment.py → stats.json → figures.py` 这条链。所以五代流程图统一走 matplotlib，并按正交连线、每图至多 2 处焦点色、图例不进图内的原则排版。

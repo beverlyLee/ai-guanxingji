@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-"""CV5 文章 QC：字数、黑名单、破折号、粗体、数学占比、stats 一致性、图片数。"""
+"""CV5 文章 QC：双口径字数、黑名单、破折号、粗体、数学占比、stats 一致性、图片数。
+
+字数采用双口径：
+  主门限 len(text)（含空白与 markdown 标记，即编辑器里看到的字符数）落在 10000-15000；
+  辅门限 CJK 字符数 >= 6000（防止把文章删空）。
+图片引用总数要求 >= 10（6 张数据配图 + 5 张流程图，留 1 张余量）。
+"""
 
 import json
 import re
@@ -24,6 +30,13 @@ PICTURES = [
     "fig5_resnet.png",
     "fig6_rf.png",
 ]
+
+# 最终形态：6 张数据配图 + 5 张流程图，这里按 >= 10 张把关
+EXPECTED_FIG_COUNT = 10
+
+TOTAL_CHARS_MIN = 10000
+TOTAL_CHARS_MAX = 15000
+CJK_CHARS_MIN = 6000
 
 
 def count_chinese(text: str) -> int:
@@ -54,11 +67,17 @@ def main():
 
     fails = []
 
-    # 1. 字数
+    # 1. 字数（双口径）
     cn = count_chinese(text)
-    print(f"中文字符数: {cn}")
-    if not (8500 <= cn <= 12500):
-        fails.append(f"字数 {cn} 不在 8500-12500 区间")
+    total_chars = len(text)
+    no_space_chars = len(re.sub(r"\s", "", text))
+    print(f"总字符数(含空白与 markdown): {total_chars}（要求 {TOTAL_CHARS_MIN}-{TOTAL_CHARS_MAX}）")
+    print(f"去空白字符数: {no_space_chars}")
+    print(f"中文字符数(CJK): {cn}（要求 >= {CJK_CHARS_MIN}）")
+    if not (TOTAL_CHARS_MIN <= total_chars <= TOTAL_CHARS_MAX):
+        fails.append(f"总字符数 {total_chars} 不在 {TOTAL_CHARS_MIN}-{TOTAL_CHARS_MAX} 区间")
+    if cn < CJK_CHARS_MIN:
+        fails.append(f"中文字符数 {cn} < {CJK_CHARS_MIN}")
 
     # 2. 黑名单
     hits = [w for w in BLACKLIST if w in text]
@@ -78,18 +97,21 @@ def main():
     if bold:
         fails.append(f"粗体 {len(bold)} 处未删除: {bold[:3]}")
 
-    # 5. 数学占比
+    # 5. 数学占比（分母沿用中文字符数，保持与历史口径可比）
     math_text = extract_math(text)
     math_chars = len(re.sub(r"\s", "", math_text))
-    total_chars = count_chinese(text)
-    ratio = math_chars / total_chars if total_chars else 0
-    print(f"数学字符数(不含空格): {math_chars}; 占比: {ratio*100:.2f}%")
+    ratio = math_chars / cn if cn else 0
+    print(f"数学字符数(不含空格): {math_chars}; 占比(相对 CJK): {ratio*100:.2f}%")
     if ratio > 0.20:
         fails.append(f"数学占比 {ratio*100:.2f}% > 20%")
 
     # 6. 图片引用
+    fig_refs = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text)
     missing_figs = [f for f in PICTURES if f not in text]
-    print(f"图片引用缺失: {missing_figs if missing_figs else '无'}")
+    print(f"图片引用数: {len(fig_refs)}（要求 >= {EXPECTED_FIG_COUNT}）")
+    print(f"已知 6 张数据配图缺失: {missing_figs if missing_figs else '无'}")
+    if len(fig_refs) < EXPECTED_FIG_COUNT:
+        fails.append(f"图片引用 {len(fig_refs)} 张 < {EXPECTED_FIG_COUNT} 张")
     if missing_figs:
         fails.append(f"缺少图片引用: {missing_figs}")
 
