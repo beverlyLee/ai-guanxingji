@@ -1,4 +1,0 @@
-numpy
-scikit-learn
-opencv-python
-matplotlib
